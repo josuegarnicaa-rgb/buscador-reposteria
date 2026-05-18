@@ -33,9 +33,45 @@
             <h2>Resultados para: "{{ termino }}"</h2>
 
             {% if resultados %}
-                <section class="resultados">
+            
+            <h3>Filtrar Resultados por clase</h3>
+            
+            <!-- Controles de Filtrado -->
+            <ul class="controls">
+              <!-- El valor "all" muestra todos los elementos -->
+              <li data-filter="all" class="active">Todos</li>
+              <li data-filter="herramientaElectrico">herramientaElectrico</li>
+              <li data-filter="herramientaMano">herramientaMano</li>
+              
+              <li data-filter="animal">animal</li>
+              <li data-filter="decoracion">decoracion</li>
+              <li data-filter="fruta">fruta</li>
+              <li data-filter="liquido">liquido</li>
+              <li data-filter="seco">seco</li>
+              
+              <li data-filter="brownie">brownie</li>
+              <li data-filter="cheesecake">cheesecake</li>
+              <li data-filter="cupcake">cupcake</li>
+              <li data-filter="dona">dona</li>
+              <li data-filter="galleta">galleta</li>
+              
+              <li data-filter="muffin">muffin</li>
+              <li data-filter="pie">pie</li>
+              <li data-filter="pudin">pudin</li>
+              <li data-filter="torta">torta</li>
+              <li data-filter="receta">receta</li>
+              
+            </ul>
+            
+                <section class="resultados filtr-container">
                     {% for resultado in resultados %}
-                        <article class="tarjeta">
+                        <article class="tarjeta filtr-item" 
+                        {% if resultado.clases %}
+                          {% for clase in resultado.clases %}
+                            data-category="{{ clase }}"
+                          {% endfor %}
+                        {% endif %}
+                        >
                             <h3>{{ resultado.nombre }}</h3>
                             <span class="tipo">{{ resultado.tipo }}</span>
 
@@ -100,5 +136,28 @@
             {% endif %}
         {% endif %}
     </main>
+    <script src="{{ url_for('static', filename='vanilla.filterizr.min.js') }}"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Opciones de configuración 
+      const options = {
+        animationDuration: 0.5, // Duración de la animación en segundos
+        gutterPixels: 10,       // Espacio entre los elementos
+        layout: 'sameWidth'      // Modo de disposición en cuadrícula
+      };
+
+      // Inicializar Filterizr pasándole la clase del contenedor principal
+      const filterizr = new Filterizr('.filtr-container', options);
+      
+      // Código para cambiar la clase "active" visualmente en los botones
+      const controlItems = document.querySelectorAll('.controls li');
+      controlItems.forEach(item => {
+        item.addEventListener('click', function() {
+          document.querySelector('.controls li.active').classList.remove('active');
+          this.classList.add('active');
+        });
+      });
+    });
+    </script>
 </body>
 </html>
