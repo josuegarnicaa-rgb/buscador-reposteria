@@ -1,0 +1,3509 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/efrain/ontologies/2026/3/untitled-ontology-31"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/efrain/ontologies/2026/3/untitled-ontology-31">
+    <Prefix name="" IRI="http://www.semanticweb.org/efrain/ontologies/2026/3/reposteria/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#animal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#brownie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cheesecake"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cupcake"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#decoracion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#dona"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#fruta"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#galleta"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#herramienta"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#herramientaElectrico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#herramientaMano"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ingrediente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#liquido"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#muffin"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#pie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#producto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#pudin"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#receta"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#reposteria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#seco"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#torta"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneDecoracion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneReceta"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneRelleno"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tieneSabor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usaHerramienta"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usaIngrediente"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#cantidadDeCapas"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#cantidadPasos"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#esAptoParaRefrigeracion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#esAzucar"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#esEsencial"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#esEspecial"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#esParaEvento"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#esParaMedir"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#esParaMezcla"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#esPorcionIndividual"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#metodoCoccion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#metodoPreparacion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#presentacion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#saborPrincipal"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tamaño"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#temperaturaHorneado"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tiempoPreparacion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tieneGluten"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CheesecakeDurazno"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CheesecakeDuraznoSinAzucar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CheesecakeFresa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CheesecakeFrio"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CheesecakeMaracuya"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#aceiteVegetal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#agua"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#amasadoraElectrica"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#arandanos"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#avena"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#azucarBlanca"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#azucarGlas"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#azucarMorena"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#balanzaCocina"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#batidora"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#batidoraMano"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#bicarbonatoSodio"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#boquillas"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#brownieChocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#brownieClasico"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#brownieSinAzucar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#brownieZanahoria"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cacaoAmargo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#canela"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#chispasChocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#chocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#coco"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#crema"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cremaBatida"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cremaLeche"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cucharaMedidora"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cuchillaCocina"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cupcakeChocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cupcakeLimon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cupcakeManzana"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cupcakeVainilla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#donaChocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#donaCoco"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#donaGlaseada"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#donaRellenaCremaPastelera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#durazno"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#espatula"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#espumadorLeche"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#exprimidorElectrico"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#flanera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#fondant"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#fresa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#galletaAvena"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#galletaChocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#galletaJengibre"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#galletaNuez"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ganashe"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#glaseado"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#grofera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#harinaSinGluten"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#huevo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#jarraMedidora"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#jengibrePolvo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#leche"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lecheEntera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#licuadora"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#limon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mangaPastelera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mantequilla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#manzana"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#maracuya"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#microondas"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#moldeDesmontableRedondo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#moldeDona"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#moldeIndividual"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#moldeRectangular"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#moldeRedondoPie"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mora"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#muffinArandanos"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#muffinChocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#muffinVainilla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#muffinZanahoria"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pieLimonGrande"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pieLimonMediano"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pieManzana"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pieManzanaSinAzucar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pieMaracuyaGrande"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pieMaracuyaPequeño"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#polvoHornear"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pudinCaramelo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pudinChocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pudinVainilla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#queso"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#quesoCrema"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#raspadorMasa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaBrownieChocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaCheesecakeDurazno"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaCheesecakeDuraznoSinAzucar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaCheesecakeFresa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaCheesecakeMaracuya"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaCupcakeChocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaCupcakeLimon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaCupcakeManzana"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaCupcakeVainilla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaDonaChocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaDonaCoco"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaGalletaAvena"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaGalletaChocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaGalletaJengibre"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaMuffinArandanos"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaMuffinChocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaPieLimon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaPieManzana"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaPieManzanaSinAzucar"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaPieMaracuya"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaPudinCaramelo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaPudinChocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#rodillo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tamiz"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tazaMedidora"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#templadoraChocolate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tortaChocolateGrande"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tortaChocolateMediana"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tortaDurazno"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tortaHelada"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tortaVainilla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#vainilla"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#vainillaLiquida"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#zanahoria"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#animal"/>
+        <Class IRI="#ingrediente"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#brownie"/>
+        <Class IRI="#producto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cheesecake"/>
+        <Class IRI="#producto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#cupcake"/>
+        <Class IRI="#producto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#decoracion"/>
+        <Class IRI="#ingrediente"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#dona"/>
+        <Class IRI="#producto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#fruta"/>
+        <Class IRI="#ingrediente"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#galleta"/>
+        <Class IRI="#producto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#herramienta"/>
+        <Class IRI="#reposteria"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#herramientaElectrico"/>
+        <Class IRI="#herramienta"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#herramientaMano"/>
+        <Class IRI="#herramienta"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ingrediente"/>
+        <Class IRI="#reposteria"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#liquido"/>
+        <Class IRI="#ingrediente"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#muffin"/>
+        <Class IRI="#producto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pie"/>
+        <Class IRI="#producto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#producto"/>
+        <Class IRI="#reposteria"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#pudin"/>
+        <Class IRI="#producto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#receta"/>
+        <Class IRI="#reposteria"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#seco"/>
+        <Class IRI="#ingrediente"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#torta"/>
+        <Class IRI="#producto"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#cheesecake"/>
+        <NamedIndividual IRI="#CheesecakeDurazno"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#cheesecake"/>
+        <NamedIndividual IRI="#CheesecakeDuraznoSinAzucar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#cheesecake"/>
+        <NamedIndividual IRI="#CheesecakeFresa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#cheesecake"/>
+        <NamedIndividual IRI="#CheesecakeFrio"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#cheesecake"/>
+        <NamedIndividual IRI="#CheesecakeMaracuya"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#liquido"/>
+        <NamedIndividual IRI="#aceiteVegetal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#liquido"/>
+        <NamedIndividual IRI="#agua"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaElectrico"/>
+        <NamedIndividual IRI="#amasadoraElectrica"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#fruta"/>
+        <NamedIndividual IRI="#arandanos"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#seco"/>
+        <NamedIndividual IRI="#avena"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#seco"/>
+        <NamedIndividual IRI="#azucarBlanca"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#decoracion"/>
+        <NamedIndividual IRI="#azucarGlas"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#seco"/>
+        <NamedIndividual IRI="#azucarGlas"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#seco"/>
+        <NamedIndividual IRI="#azucarMorena"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaElectrico"/>
+        <NamedIndividual IRI="#balanzaCocina"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaElectrico"/>
+        <NamedIndividual IRI="#batidora"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaMano"/>
+        <NamedIndividual IRI="#batidoraMano"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#seco"/>
+        <NamedIndividual IRI="#bicarbonatoSodio"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaMano"/>
+        <NamedIndividual IRI="#boquillas"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#brownie"/>
+        <NamedIndividual IRI="#brownieChocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#brownie"/>
+        <NamedIndividual IRI="#brownieClasico"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#brownie"/>
+        <NamedIndividual IRI="#brownieSinAzucar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#brownie"/>
+        <NamedIndividual IRI="#brownieZanahoria"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#seco"/>
+        <NamedIndividual IRI="#cacaoAmargo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#seco"/>
+        <NamedIndividual IRI="#canela"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#decoracion"/>
+        <NamedIndividual IRI="#chispasChocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ingrediente"/>
+        <NamedIndividual IRI="#chocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#fruta"/>
+        <NamedIndividual IRI="#coco"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#animal"/>
+        <NamedIndividual IRI="#crema"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#animal"/>
+        <NamedIndividual IRI="#cremaBatida"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#animal"/>
+        <NamedIndividual IRI="#cremaLeche"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaMano"/>
+        <NamedIndividual IRI="#cucharaMedidora"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaMano"/>
+        <NamedIndividual IRI="#cuchillaCocina"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#cupcake"/>
+        <NamedIndividual IRI="#cupcakeChocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#cupcake"/>
+        <NamedIndividual IRI="#cupcakeLimon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#cupcake"/>
+        <NamedIndividual IRI="#cupcakeManzana"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#cupcake"/>
+        <NamedIndividual IRI="#cupcakeVainilla"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#dona"/>
+        <NamedIndividual IRI="#donaChocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#dona"/>
+        <NamedIndividual IRI="#donaCoco"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#dona"/>
+        <NamedIndividual IRI="#donaGlaseada"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#dona"/>
+        <NamedIndividual IRI="#donaRellenaCremaPastelera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#fruta"/>
+        <NamedIndividual IRI="#durazno"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaMano"/>
+        <NamedIndividual IRI="#espatula"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaElectrico"/>
+        <NamedIndividual IRI="#espumadorLeche"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaElectrico"/>
+        <NamedIndividual IRI="#exprimidorElectrico"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaMano"/>
+        <NamedIndividual IRI="#flanera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#decoracion"/>
+        <NamedIndividual IRI="#fondant"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#fruta"/>
+        <NamedIndividual IRI="#fresa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#galleta"/>
+        <NamedIndividual IRI="#galletaAvena"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#galleta"/>
+        <NamedIndividual IRI="#galletaChocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#galleta"/>
+        <NamedIndividual IRI="#galletaJengibre"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#galleta"/>
+        <NamedIndividual IRI="#galletaNuez"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#decoracion"/>
+        <NamedIndividual IRI="#ganashe"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#decoracion"/>
+        <NamedIndividual IRI="#glaseado"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaElectrico"/>
+        <NamedIndividual IRI="#grofera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#seco"/>
+        <NamedIndividual IRI="#harinaSinGluten"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#seco"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#animal"/>
+        <NamedIndividual IRI="#huevo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaMano"/>
+        <NamedIndividual IRI="#jarraMedidora"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#seco"/>
+        <NamedIndividual IRI="#jengibrePolvo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#animal"/>
+        <NamedIndividual IRI="#leche"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#liquido"/>
+        <NamedIndividual IRI="#leche"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#animal"/>
+        <NamedIndividual IRI="#lecheEntera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#liquido"/>
+        <NamedIndividual IRI="#lecheEntera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaElectrico"/>
+        <NamedIndividual IRI="#licuadora"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#fruta"/>
+        <NamedIndividual IRI="#limon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaMano"/>
+        <NamedIndividual IRI="#mangaPastelera"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#animal"/>
+        <NamedIndividual IRI="#mantequilla"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#fruta"/>
+        <NamedIndividual IRI="#manzana"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#fruta"/>
+        <NamedIndividual IRI="#maracuya"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaElectrico"/>
+        <NamedIndividual IRI="#microondas"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaMano"/>
+        <NamedIndividual IRI="#moldeDesmontableRedondo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaMano"/>
+        <NamedIndividual IRI="#moldeDona"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaMano"/>
+        <NamedIndividual IRI="#moldeIndividual"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaMano"/>
+        <NamedIndividual IRI="#moldeRectangular"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaMano"/>
+        <NamedIndividual IRI="#moldeRedondoPie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#fruta"/>
+        <NamedIndividual IRI="#mora"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#muffin"/>
+        <NamedIndividual IRI="#muffinArandanos"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#muffin"/>
+        <NamedIndividual IRI="#muffinChocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#muffin"/>
+        <NamedIndividual IRI="#muffinVainilla"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#muffin"/>
+        <NamedIndividual IRI="#muffinZanahoria"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#pie"/>
+        <NamedIndividual IRI="#pieLimonGrande"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#pie"/>
+        <NamedIndividual IRI="#pieLimonMediano"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#pie"/>
+        <NamedIndividual IRI="#pieManzana"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#pie"/>
+        <NamedIndividual IRI="#pieManzanaSinAzucar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#pie"/>
+        <NamedIndividual IRI="#pieMaracuyaGrande"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#pie"/>
+        <NamedIndividual IRI="#pieMaracuyaPequeño"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#seco"/>
+        <NamedIndividual IRI="#polvoHornear"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#pudin"/>
+        <NamedIndividual IRI="#pudinCaramelo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#pudin"/>
+        <NamedIndividual IRI="#pudinChocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#pudin"/>
+        <NamedIndividual IRI="#pudinVainilla"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#animal"/>
+        <NamedIndividual IRI="#queso"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#animal"/>
+        <NamedIndividual IRI="#quesoCrema"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaMano"/>
+        <NamedIndividual IRI="#raspadorMasa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaBrownieChocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaCheesecakeDurazno"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaCheesecakeDuraznoSinAzucar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaCheesecakeFresa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaCheesecakeMaracuya"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaCupcakeChocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaCupcakeLimon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaCupcakeManzana"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaCupcakeVainilla"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaDonaChocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaDonaCoco"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaGalletaAvena"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaGalletaChocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaGalletaJengibre"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaMuffinArandanos"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaMuffinChocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaPieLimon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaPieManzana"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaPieManzanaSinAzucar"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaPieMaracuya"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaPudinCaramelo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaPudinChocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#receta"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaMano"/>
+        <NamedIndividual IRI="#rodillo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaMano"/>
+        <NamedIndividual IRI="#tamiz"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaMano"/>
+        <NamedIndividual IRI="#tazaMedidora"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#herramientaElectrico"/>
+        <NamedIndividual IRI="#templadoraChocolate"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#torta"/>
+        <NamedIndividual IRI="#tortaChocolateGrande"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#torta"/>
+        <NamedIndividual IRI="#tortaChocolateMediana"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#torta"/>
+        <NamedIndividual IRI="#tortaDurazno"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#torta"/>
+        <NamedIndividual IRI="#tortaHelada"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#torta"/>
+        <NamedIndividual IRI="#tortaVainilla"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ingrediente"/>
+        <NamedIndividual IRI="#vainilla"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#liquido"/>
+        <NamedIndividual IRI="#vainillaLiquida"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ingrediente"/>
+        <NamedIndividual IRI="#zanahoria"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#CheesecakeDurazno"/>
+        <NamedIndividual IRI="#recetaCheesecakeDurazno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#CheesecakeDuraznoSinAzucar"/>
+        <NamedIndividual IRI="#recetaCheesecakeDuraznoSinAzucar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#CheesecakeFresa"/>
+        <NamedIndividual IRI="#recetaCheesecakeFresa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#CheesecakeMaracuya"/>
+        <NamedIndividual IRI="#recetaCheesecakeMaracuya"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#brownieChocolate"/>
+        <NamedIndividual IRI="#recetaBrownieChocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#cupcakeChocolate"/>
+        <NamedIndividual IRI="#recetaCupcakeChocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#cupcakeLimon"/>
+        <NamedIndividual IRI="#recetaCupcakeLimon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#cupcakeManzana"/>
+        <NamedIndividual IRI="#recetaCupcakeManzana"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#cupcakeVainilla"/>
+        <NamedIndividual IRI="#recetaCupcakeVainilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#donaChocolate"/>
+        <NamedIndividual IRI="#recetaDonaChocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#donaCoco"/>
+        <NamedIndividual IRI="#recetaDonaCoco"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#galletaAvena"/>
+        <NamedIndividual IRI="#recetaGalletaAvena"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#galletaChocolate"/>
+        <NamedIndividual IRI="#recetaGalletaChocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#galletaJengibre"/>
+        <NamedIndividual IRI="#recetaGalletaJengibre"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#muffinArandanos"/>
+        <NamedIndividual IRI="#recetaMuffinArandanos"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#muffinChocolate"/>
+        <NamedIndividual IRI="#recetaMuffinChocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#pieLimonGrande"/>
+        <NamedIndividual IRI="#recetaPieLimon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#pieLimonMediano"/>
+        <NamedIndividual IRI="#recetaPieLimon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#pieManzana"/>
+        <NamedIndividual IRI="#recetaPieManzana"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#pieManzanaSinAzucar"/>
+        <NamedIndividual IRI="#recetaPieManzanaSinAzucar"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#pieMaracuyaGrande"/>
+        <NamedIndividual IRI="#recetaPieMaracuya"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#pieMaracuyaPequeño"/>
+        <NamedIndividual IRI="#recetaPieMaracuya"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#pudinCaramelo"/>
+        <NamedIndividual IRI="#recetaPudinCaramelo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#pudinChocolate"/>
+        <NamedIndividual IRI="#recetaPudinChocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <NamedIndividual IRI="#recetaBrownieChocolate"/>
+        <NamedIndividual IRI="#chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaBrownieChocolate"/>
+        <NamedIndividual IRI="#espatula"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaBrownieChocolate"/>
+        <NamedIndividual IRI="#azucarBlanca"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaBrownieChocolate"/>
+        <NamedIndividual IRI="#chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaBrownieChocolate"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaBrownieChocolate"/>
+        <NamedIndividual IRI="#huevo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaBrownieChocolate"/>
+        <NamedIndividual IRI="#leche"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaBrownieChocolate"/>
+        <NamedIndividual IRI="#mantequilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaBrownieChocolate"/>
+        <NamedIndividual IRI="#chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneDecoracion"/>
+        <NamedIndividual IRI="#recetaCheesecakeDurazno"/>
+        <NamedIndividual IRI="#glaseado"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneRelleno"/>
+        <NamedIndividual IRI="#recetaCheesecakeDurazno"/>
+        <NamedIndividual IRI="#durazno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <NamedIndividual IRI="#recetaCheesecakeDurazno"/>
+        <NamedIndividual IRI="#durazno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaCheesecakeDurazno"/>
+        <NamedIndividual IRI="#batidora"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCheesecakeDurazno"/>
+        <NamedIndividual IRI="#azucarBlanca"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCheesecakeDurazno"/>
+        <NamedIndividual IRI="#cremaBatida"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCheesecakeDurazno"/>
+        <NamedIndividual IRI="#durazno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaCheesecakeDurazno"/>
+        <NamedIndividual IRI="#durazno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaCheesecakeDuraznoSinAzucar"/>
+        <NamedIndividual IRI="#batidora"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCheesecakeDuraznoSinAzucar"/>
+        <NamedIndividual IRI="#cremaBatida"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCheesecakeDuraznoSinAzucar"/>
+        <NamedIndividual IRI="#durazno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCheesecakeDuraznoSinAzucar"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaCheesecakeDuraznoSinAzucar"/>
+        <NamedIndividual IRI="#durazno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneDecoracion"/>
+        <NamedIndividual IRI="#recetaCheesecakeFresa"/>
+        <NamedIndividual IRI="#glaseado"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <NamedIndividual IRI="#recetaCheesecakeFresa"/>
+        <NamedIndividual IRI="#fresa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaCheesecakeFresa"/>
+        <NamedIndividual IRI="#batidora"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCheesecakeFresa"/>
+        <NamedIndividual IRI="#cremaBatida"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCheesecakeFresa"/>
+        <NamedIndividual IRI="#fresa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaCheesecakeFresa"/>
+        <NamedIndividual IRI="#fresa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneDecoracion"/>
+        <NamedIndividual IRI="#recetaCheesecakeMaracuya"/>
+        <NamedIndividual IRI="#glaseado"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <NamedIndividual IRI="#recetaCheesecakeMaracuya"/>
+        <NamedIndividual IRI="#maracuya"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaCheesecakeMaracuya"/>
+        <NamedIndividual IRI="#batidora"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCheesecakeMaracuya"/>
+        <NamedIndividual IRI="#cremaBatida"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCheesecakeMaracuya"/>
+        <NamedIndividual IRI="#maracuya"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaCheesecakeMaracuya"/>
+        <NamedIndividual IRI="#maracuya"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <NamedIndividual IRI="#recetaCupcakeChocolate"/>
+        <NamedIndividual IRI="#chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaCupcakeChocolate"/>
+        <NamedIndividual IRI="#batidora"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCupcakeChocolate"/>
+        <NamedIndividual IRI="#chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCupcakeChocolate"/>
+        <NamedIndividual IRI="#crema"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCupcakeChocolate"/>
+        <NamedIndividual IRI="#fondant"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCupcakeChocolate"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaCupcakeChocolate"/>
+        <NamedIndividual IRI="#chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneDecoracion"/>
+        <NamedIndividual IRI="#recetaCupcakeLimon"/>
+        <NamedIndividual IRI="#fondant"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <NamedIndividual IRI="#recetaCupcakeLimon"/>
+        <NamedIndividual IRI="#limon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaCupcakeLimon"/>
+        <NamedIndividual IRI="#batidora"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCupcakeLimon"/>
+        <NamedIndividual IRI="#crema"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCupcakeLimon"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCupcakeLimon"/>
+        <NamedIndividual IRI="#limon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaCupcakeLimon"/>
+        <NamedIndividual IRI="#limon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneDecoracion"/>
+        <NamedIndividual IRI="#recetaCupcakeManzana"/>
+        <NamedIndividual IRI="#fondant"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <NamedIndividual IRI="#recetaCupcakeManzana"/>
+        <NamedIndividual IRI="#manzana"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaCupcakeManzana"/>
+        <NamedIndividual IRI="#batidora"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCupcakeManzana"/>
+        <NamedIndividual IRI="#crema"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCupcakeManzana"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCupcakeManzana"/>
+        <NamedIndividual IRI="#manzana"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaCupcakeManzana"/>
+        <NamedIndividual IRI="#manzana"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneDecoracion"/>
+        <NamedIndividual IRI="#recetaCupcakeVainilla"/>
+        <NamedIndividual IRI="#fondant"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaCupcakeVainilla"/>
+        <NamedIndividual IRI="#batidora"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCupcakeVainilla"/>
+        <NamedIndividual IRI="#crema"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCupcakeVainilla"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaCupcakeVainilla"/>
+        <NamedIndividual IRI="#vainilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaCupcakeVainilla"/>
+        <NamedIndividual IRI="#vainilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneDecoracion"/>
+        <NamedIndividual IRI="#recetaDonaChocolate"/>
+        <NamedIndividual IRI="#azucarGlas"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaDonaChocolate"/>
+        <NamedIndividual IRI="#azucarBlanca"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaDonaChocolate"/>
+        <NamedIndividual IRI="#chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaDonaChocolate"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaDonaChocolate"/>
+        <NamedIndividual IRI="#leche"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaDonaChocolate"/>
+        <NamedIndividual IRI="#chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneDecoracion"/>
+        <NamedIndividual IRI="#recetaDonaCoco"/>
+        <NamedIndividual IRI="#azucarGlas"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaDonaCoco"/>
+        <NamedIndividual IRI="#coco"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaDonaCoco"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaDonaCoco"/>
+        <NamedIndividual IRI="#leche"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaDonaCoco"/>
+        <NamedIndividual IRI="#coco"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <NamedIndividual IRI="#recetaGalletaAvena"/>
+        <NamedIndividual IRI="#avena"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaGalletaAvena"/>
+        <NamedIndividual IRI="#avena"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaGalletaAvena"/>
+        <NamedIndividual IRI="#bicarbonatoSodio"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaGalletaAvena"/>
+        <NamedIndividual IRI="#canela"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaGalletaAvena"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaGalletaAvena"/>
+        <NamedIndividual IRI="#huevo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaGalletaAvena"/>
+        <NamedIndividual IRI="#polvoHornear"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaGalletaAvena"/>
+        <NamedIndividual IRI="#avena"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaGalletaChocolate"/>
+        <NamedIndividual IRI="#azucarBlanca"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaGalletaChocolate"/>
+        <NamedIndividual IRI="#chispasChocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaGalletaChocolate"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaGalletaChocolate"/>
+        <NamedIndividual IRI="#huevo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaGalletaChocolate"/>
+        <NamedIndividual IRI="#chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <NamedIndividual IRI="#recetaGalletaJengibre"/>
+        <NamedIndividual IRI="#jengibrePolvo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaGalletaJengibre"/>
+        <NamedIndividual IRI="#azucarMorena"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaGalletaJengibre"/>
+        <NamedIndividual IRI="#bicarbonatoSodio"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaGalletaJengibre"/>
+        <NamedIndividual IRI="#canela"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaGalletaJengibre"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaGalletaJengibre"/>
+        <NamedIndividual IRI="#jengibrePolvo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaGalletaJengibre"/>
+        <NamedIndividual IRI="#mantequilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaGalletaJengibre"/>
+        <NamedIndividual IRI="#jengibrePolvo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <NamedIndividual IRI="#recetaMuffinArandanos"/>
+        <NamedIndividual IRI="#arandanos"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaMuffinArandanos"/>
+        <NamedIndividual IRI="#batidora"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaMuffinArandanos"/>
+        <NamedIndividual IRI="#arandanos"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaMuffinArandanos"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaMuffinArandanos"/>
+        <NamedIndividual IRI="#arandanos"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaMuffinChocolate"/>
+        <NamedIndividual IRI="#batidora"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaMuffinChocolate"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaMuffinChocolate"/>
+        <NamedIndividual IRI="#chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <NamedIndividual IRI="#recetaPieLimon"/>
+        <NamedIndividual IRI="#limon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaPieLimon"/>
+        <NamedIndividual IRI="#moldeRedondoPie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaPieLimon"/>
+        <NamedIndividual IRI="#cremaBatida"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaPieLimon"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaPieLimon"/>
+        <NamedIndividual IRI="#limon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaPieLimon"/>
+        <NamedIndividual IRI="#limon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <NamedIndividual IRI="#recetaPieManzana"/>
+        <NamedIndividual IRI="#manzana"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaPieManzana"/>
+        <NamedIndividual IRI="#moldeRedondoPie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaPieManzana"/>
+        <NamedIndividual IRI="#cremaBatida"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaPieManzana"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaPieManzana"/>
+        <NamedIndividual IRI="#manzana"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaPieManzana"/>
+        <NamedIndividual IRI="#manzana"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <NamedIndividual IRI="#recetaPieManzanaSinAzucar"/>
+        <NamedIndividual IRI="#manzana"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaPieManzanaSinAzucar"/>
+        <NamedIndividual IRI="#moldeRedondoPie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaPieManzanaSinAzucar"/>
+        <NamedIndividual IRI="#cremaBatida"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaPieManzanaSinAzucar"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaPieManzanaSinAzucar"/>
+        <NamedIndividual IRI="#manzana"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaPieManzanaSinAzucar"/>
+        <NamedIndividual IRI="#manzana"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <NamedIndividual IRI="#recetaPieMaracuya"/>
+        <NamedIndividual IRI="#maracuya"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaPieMaracuya"/>
+        <NamedIndividual IRI="#moldeRedondoPie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaPieMaracuya"/>
+        <NamedIndividual IRI="#cremaBatida"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaPieMaracuya"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaPieMaracuya"/>
+        <NamedIndividual IRI="#maracuya"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaPieMaracuya"/>
+        <NamedIndividual IRI="#maracuya"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaPudinCaramelo"/>
+        <NamedIndividual IRI="#flanera"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <NamedIndividual IRI="#recetaPudinChocolate"/>
+        <NamedIndividual IRI="#chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaPudinChocolate"/>
+        <NamedIndividual IRI="#flanera"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaPudinChocolate"/>
+        <NamedIndividual IRI="#chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneDecoracion"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#fondant"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneRelleno"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#amasadoraElectrica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#batidora"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#boquillas"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#espatula"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#mangaPastelera"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#moldeDesmontableRedondo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#moldeRectangular"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#raspadorMasa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#tamiz"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#agua"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#azucarBlanca"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#chispasChocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#huevo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#leche"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#mantequilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#polvoHornear"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <NamedIndividual IRI="#chocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneDecoracion"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#fondant"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneRelleno"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#cremaBatida"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#durazno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#amasadoraElectrica"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#batidora"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#espatula"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#mangaPastelera"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#moldeRectangular"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#raspadorMasa"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#tamiz"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#azucarBlanca"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#cremaBatida"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#durazno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#harinaTrigo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#huevo"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#leche"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#mantequilla"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#polvoHornear"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <NamedIndividual IRI="#durazno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#tortaChocolateGrande"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#tortaChocolateMediana"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <NamedIndividual IRI="#tortaDurazno"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esParaEvento"/>
+        <NamedIndividual IRI="#CheesecakeDurazno"/>
+        <Literal>cumpleaños</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#CheesecakeDurazno"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#CheesecakeDurazno"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esAzucar"/>
+        <NamedIndividual IRI="#CheesecakeDuraznoSinAzucar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#CheesecakeDuraznoSinAzucar"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#CheesecakeDuraznoSinAzucar"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#CheesecakeFresa"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#CheesecakeFresa"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#CheesecakeFrio"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#CheesecakeFrio"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#CheesecakeMaracuya"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#CheesecakeMaracuya"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esEsencial"/>
+        <NamedIndividual IRI="#balanzaCocina"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esParaMedir"/>
+        <NamedIndividual IRI="#balanzaCocina"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esEsencial"/>
+        <NamedIndividual IRI="#batidora"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esParaMezcla"/>
+        <NamedIndividual IRI="#batidora"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esEsencial"/>
+        <NamedIndividual IRI="#batidoraMano"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esParaMezcla"/>
+        <NamedIndividual IRI="#batidoraMano"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esEsencial"/>
+        <NamedIndividual IRI="#boquillas"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esParaEvento"/>
+        <NamedIndividual IRI="#brownieChocolate"/>
+        <Literal>cumpleaños</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <NamedIndividual IRI="#brownieChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#brownieChocolate"/>
+        <Literal>individual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#brownieChocolate"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <NamedIndividual IRI="#brownieClasico"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#brownieClasico"/>
+        <Literal>individual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#brownieClasico"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esAzucar"/>
+        <NamedIndividual IRI="#brownieSinAzucar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <NamedIndividual IRI="#brownieSinAzucar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#brownieSinAzucar"/>
+        <Literal>individual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#brownieSinAzucar"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <NamedIndividual IRI="#brownieZanahoria"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#brownieZanahoria"/>
+        <Literal>individual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#brownieZanahoria"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esEsencial"/>
+        <NamedIndividual IRI="#cucharaMedidora"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esParaMedir"/>
+        <NamedIndividual IRI="#cucharaMedidora"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esParaEvento"/>
+        <NamedIndividual IRI="#cupcakeChocolate"/>
+        <Literal>celebracion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#cupcakeChocolate"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esParaEvento"/>
+        <NamedIndividual IRI="#cupcakeLimon"/>
+        <Literal>celebracion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#cupcakeLimon"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#cupcakeManzana"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esParaEvento"/>
+        <NamedIndividual IRI="#cupcakeVainilla"/>
+        <Literal>celebracion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#cupcakeVainilla"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#donaChocolate"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#donaCoco"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#donaGlaseada"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#donaRellenaCremaPastelera"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esEsencial"/>
+        <NamedIndividual IRI="#espatula"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esParaMezcla"/>
+        <NamedIndividual IRI="#espatula"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <NamedIndividual IRI="#galletaAvena"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#galletaAvena"/>
+        <Literal>individual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#galletaAvena"/>
+        <Literal>paquete</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <NamedIndividual IRI="#galletaChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#galletaChocolate"/>
+        <Literal>individual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#galletaChocolate"/>
+        <Literal>paquete</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <NamedIndividual IRI="#galletaJengibre"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#galletaJengibre"/>
+        <Literal>individual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#galletaJengibre"/>
+        <Literal>paquete</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <NamedIndividual IRI="#galletaNuez"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#galletaNuez"/>
+        <Literal>individual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#galletaNuez"/>
+        <Literal>paquete</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esParaMedir"/>
+        <NamedIndividual IRI="#jarraMedidora"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esParaMezcla"/>
+        <NamedIndividual IRI="#licuadora"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esEsencial"/>
+        <NamedIndividual IRI="#mangaPastelera"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esEsencial"/>
+        <NamedIndividual IRI="#moldeDesmontableRedondo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esEspecial"/>
+        <NamedIndividual IRI="#moldeDona"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esEsencial"/>
+        <NamedIndividual IRI="#moldeRectangular"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esEspecial"/>
+        <NamedIndividual IRI="#moldeRedondoPie"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <NamedIndividual IRI="#muffinArandanos"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#muffinArandanos"/>
+        <Literal>individual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <NamedIndividual IRI="#muffinChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#muffinChocolate"/>
+        <Literal>individual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <NamedIndividual IRI="#muffinVainilla"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#muffinVainilla"/>
+        <Literal>individual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <NamedIndividual IRI="#muffinZanahoria"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#muffinZanahoria"/>
+        <Literal>individual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#pieLimonGrande"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tamaño"/>
+        <NamedIndividual IRI="#pieLimonGrande"/>
+        <Literal>grande</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#pieLimonMediano"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#pieLimonMediano"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tamaño"/>
+        <NamedIndividual IRI="#pieLimonMediano"/>
+        <Literal>mediana</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#pieManzana"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#pieManzana"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esAzucar"/>
+        <NamedIndividual IRI="#pieManzanaSinAzucar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#pieManzanaSinAzucar"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#pieManzanaSinAzucar"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#pieMaracuyaGrande"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tamaño"/>
+        <NamedIndividual IRI="#pieMaracuyaGrande"/>
+        <Literal>grande</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#pieMaracuyaPequeño"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tamaño"/>
+        <NamedIndividual IRI="#pieMaracuyaPequeño"/>
+        <Literal>pequeño</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <NamedIndividual IRI="#pudinCaramelo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#pudinCaramelo"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#pudinCaramelo"/>
+        <Literal>individual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <NamedIndividual IRI="#pudinChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#pudinChocolate"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#pudinChocolate"/>
+        <Literal>individual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <NamedIndividual IRI="#pudinVainilla"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#pudinVainilla"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#pudinVainilla"/>
+        <Literal>individual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaBrownieChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaBrownieChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaBrownieChocolate"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaBrownieChocolate"/>
+        <Literal>batido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaBrownieChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">30</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaCheesecakeDurazno"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaCheesecakeDurazno"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">9</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esAptoParaRefrigeracion"/>
+        <NamedIndividual IRI="#recetaCheesecakeDurazno"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaCheesecakeDurazno"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaCheesecakeDurazno"/>
+        <Literal>batido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaCheesecakeDurazno"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">60</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaCheesecakeDuraznoSinAzucar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">9</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaCheesecakeDuraznoSinAzucar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">60</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaCheesecakeFresa"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaCheesecakeFresa"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esAptoParaRefrigeracion"/>
+        <NamedIndividual IRI="#recetaCheesecakeFresa"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaCheesecakeFresa"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaCheesecakeFresa"/>
+        <Literal>batido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaCheesecakeFresa"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">60</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaCheesecakeMaracuya"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaCheesecakeMaracuya"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esAptoParaRefrigeracion"/>
+        <NamedIndividual IRI="#recetaCheesecakeMaracuya"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaCheesecakeMaracuya"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaCheesecakeMaracuya"/>
+        <Literal>batido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaCheesecakeMaracuya"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">60</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaCupcakeChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaCupcakeChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaCupcakeChocolate"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaCupcakeChocolate"/>
+        <Literal>batido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaCupcakeChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">40</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaCupcakeLimon"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaCupcakeLimon"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaCupcakeLimon"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaCupcakeLimon"/>
+        <Literal>batido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaCupcakeLimon"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">40</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaCupcakeManzana"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaCupcakeManzana"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaCupcakeManzana"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaCupcakeManzana"/>
+        <Literal>batido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaCupcakeManzana"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">40</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaCupcakeVainilla"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaCupcakeVainilla"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaCupcakeVainilla"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaCupcakeVainilla"/>
+        <Literal>batido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaCupcakeVainilla"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">40</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaDonaChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaDonaChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaDonaChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">60</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaDonaCoco"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaDonaCoco"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaDonaCoco"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">60</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaGalletaAvena"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaGalletaAvena"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaGalletaAvena"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaGalletaAvena"/>
+        <Literal>amasado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaGalletaAvena"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">20</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaGalletaChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaGalletaChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaGalletaChocolate"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaGalletaChocolate"/>
+        <Literal>amasado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaGalletaChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">20</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaGalletaJengibre"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaGalletaJengibre"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaGalletaJengibre"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaGalletaJengibre"/>
+        <Literal>amasado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaGalletaJengibre"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">20</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaMuffinArandanos"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaMuffinArandanos"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaMuffinArandanos"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaMuffinArandanos"/>
+        <Literal>mezclado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaMuffinArandanos"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">25</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaMuffinChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaMuffinChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaMuffinChocolate"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaMuffinChocolate"/>
+        <Literal>mezclado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaMuffinChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">25</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaPieLimon"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaPieLimon"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">7</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esAptoParaRefrigeracion"/>
+        <NamedIndividual IRI="#recetaPieLimon"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaPieLimon"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaPieLimon"/>
+        <Literal>batido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaPieLimon"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">70</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaPieManzana"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaPieManzana"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">7</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esAptoParaRefrigeracion"/>
+        <NamedIndividual IRI="#recetaPieManzana"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaPieManzana"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaPieManzana"/>
+        <Literal>batido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaPieManzana"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">70</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaPieManzanaSinAzucar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaPieManzanaSinAzucar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">7</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaPieManzanaSinAzucar"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaPieManzanaSinAzucar"/>
+        <Literal>batido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaPieManzanaSinAzucar"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">70</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaPieMaracuya"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaPieMaracuya"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">7</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaPieMaracuya"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esAptoParaRefrigeracion"/>
+        <NamedIndividual IRI="#recetaPieMaracuya"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaPieMaracuya"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaPieMaracuya"/>
+        <Literal>batido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaPieMaracuya"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">70</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaPudinCaramelo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaPudinCaramelo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esAptoParaRefrigeracion"/>
+        <NamedIndividual IRI="#recetaPudinCaramelo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaPudinCaramelo"/>
+        <Literal>sinHorno</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaPudinCaramelo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">60</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaPudinChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaPudinChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esAptoParaRefrigeracion"/>
+        <NamedIndividual IRI="#recetaPudinChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaPudinChocolate"/>
+        <Literal>sinHorno</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaPudinChocolate"/>
+        <Literal>batido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaPudinChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">60</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">9</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esAptoParaRefrigeracion"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <Literal>batido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaTortaChocolate"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">90</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#cantidadPasos"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">9</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esAptoParaRefrigeracion"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoCoccion"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <Literal>horneado</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <Literal>batido</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <NamedIndividual IRI="#recetaTortaDurazno"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">90</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esEsencial"/>
+        <NamedIndividual IRI="#rodillo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esEsencial"/>
+        <NamedIndividual IRI="#tamiz"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esEsencial"/>
+        <NamedIndividual IRI="#tazaMedidora"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esParaMedir"/>
+        <NamedIndividual IRI="#tazaMedidora"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esParaEvento"/>
+        <NamedIndividual IRI="#tortaChocolateGrande"/>
+        <Literal>cumpleaños</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#tortaChocolateGrande"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tamaño"/>
+        <NamedIndividual IRI="#tortaChocolateGrande"/>
+        <Literal>grande</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esParaEvento"/>
+        <NamedIndividual IRI="#tortaChocolateMediana"/>
+        <Literal>cumpleaños</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <NamedIndividual IRI="#tortaChocolateMediana"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#tortaChocolateMediana"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#tamaño"/>
+        <NamedIndividual IRI="#tortaChocolateMediana"/>
+        <Literal>mediano</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#tortaDurazno"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#tortaDurazno"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#tortaHelada"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#tortaHelada"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#tortaVainilla"/>
+        <Literal>familiar</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#presentacion"/>
+        <NamedIndividual IRI="#tortaVainilla"/>
+        <Literal>porcion</Literal>
+    </DataPropertyAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneDecoracion"/>
+        <Class IRI="#receta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <Class IRI="#producto"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneRelleno"/>
+        <Class IRI="#receta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <Class IRI="#receta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <Class IRI="#receta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <Class IRI="#receta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <Class IRI="#receta"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneDecoracion"/>
+        <Class IRI="#ingrediente"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneReceta"/>
+        <Class IRI="#receta"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneRelleno"/>
+        <Class IRI="#ingrediente"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tieneSabor"/>
+        <Class IRI="#ingrediente"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usaHerramienta"/>
+        <Class IRI="#herramienta"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usaIngrediente"/>
+        <Class IRI="#ingrediente"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usaIngredientePrincipal"/>
+        <Class IRI="#ingrediente"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <Class IRI="#producto"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#cantidadPasos"/>
+        <Class IRI="#receta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#esAptoParaRefrigeracion"/>
+        <Class IRI="#producto"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#esAzucar"/>
+        <Class IRI="#producto"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#esEsencial"/>
+        <Class IRI="#herramienta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#esEspecial"/>
+        <Class IRI="#herramienta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#esParaEvento"/>
+        <Class IRI="#producto"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#esParaMedir"/>
+        <Class IRI="#herramienta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#esParaMezcla"/>
+        <Class IRI="#herramienta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <Class IRI="#producto"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#metodoCoccion"/>
+        <Class IRI="#producto"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <Class IRI="#receta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#presentacion"/>
+        <Class IRI="#producto"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#saborPrincipal"/>
+        <Class IRI="#producto"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tamaño"/>
+        <Class IRI="#producto"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#temperaturaHorneado"/>
+        <Class IRI="#receta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <Class IRI="#receta"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tieneGluten"/>
+        <Class IRI="#ingrediente"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#cantidadDeCapas"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#cantidadPasos"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#esAptoParaRefrigeracion"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#esAzucar"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#esEsencial"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#esEspecial"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#esParaEvento"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#esParaMedir"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#esParaMezcla"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#esPorcionIndividual"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#metodoCoccion"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#metodoPreparacion"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#presentacion"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#saborPrincipal"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tamaño"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#temperaturaHorneado"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tiempoPreparacion"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#tieneGluten"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

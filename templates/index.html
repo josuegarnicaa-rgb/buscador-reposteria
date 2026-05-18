@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscador Semántico de Repostería</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Buscador Semántico de Repostería</h1>
+        <p>Consulta productos, recetas, ingredientes, herramientas y relaciones de la ontología.</p>
+    </header>
+
+    <main>
+        <section class="resumen">
+            <div>Clases: {{ resumen.clases }}</div>
+            <div>Object Properties: {{ resumen.propiedades_objeto }}</div>
+            <div>Data Properties: {{ resumen.propiedades_datos }}</div>
+            <div>Individuos: {{ resumen.individuos }}</div>
+        </section>
+
+        <form method="POST" class="buscador">
+            <input 
+                type="text" 
+                name="termino" 
+                placeholder="Buscar: chocolate, torta, huevo, receta..."
+                value="{{ termino }}"
+            >
+            <button type="submit">Buscar</button>
+        </form>
+
+        {% if termino %}
+            <h2>Resultados para: "{{ termino }}"</h2>
+
+            {% if resultados %}
+                <section class="resultados">
+                    {% for resultado in resultados %}
+                        <article class="tarjeta">
+                            <h3>{{ resultado.nombre }}</h3>
+                            <span class="tipo">{{ resultado.tipo }}</span>
+
+                            {% if resultado.clases %}
+                                <h4>Clases</h4>
+                                <ul>
+                                    {% for clase in resultado.clases %}
+                                        <li>{{ clase }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+
+                            {% if resultado.superclases %}
+                                <h4>Superclases</h4>
+                                <ul>
+                                    {% for superclase in resultado.superclases %}
+                                        <li>{{ superclase }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+
+                            {% if resultado.relaciones %}
+                                <h4>Relaciones semánticas</h4>
+                                {% for propiedad, objetos in resultado.relaciones.items() %}
+                                    <p><strong>{{ propiedad }}</strong></p>
+                                    <ul>
+                                        {% for objeto in objetos %}
+                                            <li>{{ objeto }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                            {% endif %}
+
+                            {% if resultado.atributos %}
+                                <h4>Atributos</h4>
+                                {% for propiedad, valores in resultado.atributos.items() %}
+                                    <p><strong>{{ propiedad }}</strong></p>
+                                    <ul>
+                                        {% for valor in valores %}
+                                            <li>{{ valor }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                            {% endif %}
+
+                            {% if resultado.usado_en %}
+                                <h4>Usado en</h4>
+                                {% for propiedad, sujetos in resultado.usado_en.items() %}
+                                    <p><strong>{{ propiedad }}</strong></p>
+                                    <ul>
+                                        {% for sujeto in sujetos %}
+                                            <li>{{ sujeto }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endfor %}
+                            {% endif %}
+                        </article>
+                    {% endfor %}
+                </section>
+            {% else %}
+                <p class="vacio">No se encontraron resultados.</p>
+            {% endif %}
+        {% endif %}
+    </main>
+</body>
+</html>
