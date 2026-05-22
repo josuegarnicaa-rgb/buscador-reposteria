@@ -1,11 +1,19 @@
-from flask import Flask, render_template, request
+from flask import Flask, jsonify, request
 from pathlib import Path
 import xml.etree.ElementTree as ET
 from collections import defaultdict
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder=None, template_folder=None)
 
-ARCHIVO_ONTOLOGIA = Path("ontologia/reposteria.owx")
+ARCHIVO_ONTOLOGIA = Path(__file__).resolve().parent / "ontologia" / "reposteria.owx"
+
+
+@app.after_request
+def agregar_cors(respuesta):
+    respuesta.headers["Access-Control-Allow-Origin"] = "http://localhost:5173"
+    respuesta.headers["Access-Control-Allow-Headers"] = "Content-Type"
+    respuesta.headers["Access-Control-Allow-Methods"] = "GET, OPTIONS"
+    return respuesta
 
 
 def nombre_xml(elemento):
@@ -20,9 +28,7 @@ def limpiar_iri(valor):
 
 def obtener_iri(elemento):
     return limpiar_iri(
-        elemento.attrib.get("IRI")
-        or elemento.attrib.get("abbreviatedIRI")
-        or ""
+        elemento.attrib.get("IRI") or elemento.attrib.get("abbreviatedIRI") or ""
     )
 
 
@@ -143,60 +149,71 @@ def buscar(termino):
         if termino in texto_busqueda_individuo(individuo):
             clases = sorted(ONTOLOGIA["clases_individuo"].get(individuo, []))
 
-            superclases = sorted({
-                superior
-                for clase in clases
-                for superior in obtener_superclases(clase)
-            })
+            superclases = sorted(
+                {
+                    superior
+                    for clase in clases
+                    for superior in obtener_superclases(clase)
+                }
+            )
 
-            resultados.append({
-                "nombre": individuo,
-                "tipo": "Individuo",
-                "clases": clases,
-                "superclases": superclases,
-                "atributos": dict(ONTOLOGIA["atributos"].get(individuo, {})),
-                "relaciones": dict(ONTOLOGIA["relaciones_salida"].get(individuo, {})),
-                "usado_en": dict(ONTOLOGIA["relaciones_entrada"].get(individuo, {})),
-            })
+            resultados.append(
+                {
+                    "nombre": individuo,
+                    "tipo": "Individuo",
+                    "clases": clases,
+                    "superclases": superclases,
+                    "atributos": dict(ONTOLOGIA["atributos"].get(individuo, {})),
+                    "relaciones": dict(
+                        ONTOLOGIA["relaciones_salida"].get(individuo, {})
+                    ),
+                    "usado_en": dict(
+                        ONTOLOGIA["relaciones_entrada"].get(individuo, {})
+                    ),
+                }
+            )
 
     for clase in sorted(ONTOLOGIA["clases"]):
         if termino in clase.lower():
-            resultados.append({
-                "nombre": clase,
-                "tipo": "Clase",
-                "clases": [],
-                "superclases": obtener_superclases(clase),
-                "atributos": {},
-                "relaciones": {},
-                "usado_en": {},
-            })
+            resultados.append(
+                {
+                    "nombre": clase,
+                    "tipo": "Clase",
+                    "clases": [],
+                    "superclases": obtener_superclases(clase),
+                    "atributos": {},
+                    "relaciones": {},
+                    "usado_en": {},
+                }
+            )
 
     return resultados
 
 
-@app.route("/", methods=["GET", "POST"])
-def inicio():
-    termino = ""
-
-    if request.method == "POST":
-        termino = request.form.get("termino", "")
-
-    resultados = buscar(termino)
-
-    resumen = {
+def obtener_resumen():
+    return {
         "clases": len(ONTOLOGIA["clases"]),
         "propiedades_objeto": len(ONTOLOGIA["propiedades_objeto"]),
         "propiedades_datos": len(ONTOLOGIA["propiedades_datos"]),
         "individuos": len(ONTOLOGIA["individuos"]),
     }
 
-    return render_template(
-        "index.html",
-        termino=termino,
-        resultados=resultados,
-        resumen=resumen
+
+@app.get("/api/resumen")
+def api_resumen():
+    return jsonify(obtener_resumen())
+
+
+@app.get("/api/buscar")
+def api_buscar():
+    termino = request.args.get("termino", "")
+
+    return jsonify(
+        {
+            "resultados": buscar(termino),
+        }
     )
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5000)
