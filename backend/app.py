@@ -3,6 +3,8 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 from collections import defaultdict
 
+from services.dbpedia import consultar_dbpedia
+
 app = Flask(__name__, static_folder=None, template_folder=None)
 
 ARCHIVO_ONTOLOGIA = Path(__file__).resolve().parent / "ontologia" / "reposteria.owx"
@@ -161,6 +163,7 @@ def buscar(termino):
                 {
                     "nombre": individuo,
                     "tipo": "Individuo",
+                    "fuente": "local",
                     "clases": clases,
                     "superclases": superclases,
                     "atributos": dict(ONTOLOGIA["atributos"].get(individuo, {})),
@@ -179,6 +182,7 @@ def buscar(termino):
                 {
                     "nombre": clase,
                     "tipo": "Clase",
+                    "fuente": "local",
                     "clases": [],
                     "superclases": obtener_superclases(clase),
                     "atributos": {},
@@ -207,10 +211,20 @@ def api_resumen():
 @app.get("/api/buscar")
 def api_buscar():
     termino = request.args.get("termino", "")
+    resultados_locales = buscar(termino)
+    resultados_dbpedia = consultar_dbpedia(termino)
+    print("------------------------------")
+    print(resultados_dbpedia)
+    print("------------------------------")
 
     return jsonify(
         {
-            "resultados": buscar(termino),
+            "termino": termino,
+            "resultados": resultados_locales + resultados_dbpedia,
+            "fuentes": {
+                "local": len(resultados_locales),
+                "dbpedia": len(resultados_dbpedia),
+            },
         }
     )
 
