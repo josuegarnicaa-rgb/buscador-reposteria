@@ -7,10 +7,12 @@ export type Resumen = {
 
 export type DBpedia = {
   abstract: string
-  country: string
+  countries: string[]
   enlace: string
   imagen: string
   nombre: string
+  typeLabel: string
+  ingredientes: string[]
 }
 
 export type Resultado = {

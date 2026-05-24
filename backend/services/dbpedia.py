@@ -20,7 +20,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dbo: <http://dbpedia.org/ontology/>
 
-SELECT DISTINCT ?resource ?label ?abstract ?thumbnail ?countryLabel WHERE {{
+SELECT DISTINCT ?resource ?label ?abstract ?thumbnail ?countryLabel ?typeLabel ?ingredientLabel WHERE {{
 
     ?resource rdf:type dbo:Food .
     ?resource rdfs:label ?label .
@@ -40,8 +40,21 @@ SELECT DISTINCT ?resource ?label ?abstract ?thumbnail ?countryLabel WHERE {{
     OPTIONAL {{
         ?resource dbo:country ?country .
         ?country rdfs:label ?countryLabel .
-        
+
         FILTER(LANG(?countryLabel) IN ("es"))
+    }}
+    OPTIONAL {{
+        ?resource rdf:type ?type .
+        ?type rdfs:label ?typeLabel .
+
+        FILTER(LANG(?typeLabel) IN ("es"))
+    }}
+
+    OPTIONAL {{
+        ?resource dbo:ingredient ?ingredient .
+        ?ingredient rdfs:label ?ingredientLabel .
+
+        FILTER(LANG(?ingredientLabel) IN ("es"))
     }}
 }}
 LIMIT {limite}
@@ -52,25 +65,33 @@ LIMIT {limite}
     except Exception:
         return []
 
-    datos = []
+    datos = {}
 
     for fila in resultados.get("results", {}).get("bindings", []):
+
         recurso = fila.get("resource", {}).get("value", "")
         label = fila.get("label", {}).get("value", "")
         abstract = fila.get("abstract", {}).get("value", "")
         thumbnail = fila.get("thumbnail", {}).get("value", "")
         country = fila.get("countryLabel", {}).get("value", "")
+        typeLabel = fila.get("typeLabel", {}).get("value", "")
+        ingredient = fila.get("ingredientLabel", {}).get("value", "")
 
-        datos.append(
-            {
+        if recurso not in datos:
+            datos[recurso] = {
                 "nombre": label or recurso.rsplit("/", 1)[-1],
-                "abstract": abstract if abstract else "",
-                "country": country if country else "",
+                "abstract": abstract,
+                "countries": [],
                 "enlace": recurso,
                 "imagen": thumbnail,
+                "typeLabel": typeLabel,
+                "ingredientes": [],
             }
-        )
 
-    print(f"DBpedia '{consulta}': {len(datos)} resultados")
+        if ingredient and ingredient not in datos[recurso]["ingredientes"]:
+            datos[recurso]["ingredientes"].append(ingredient)
 
-    return datos
+        if country and country not in datos[recurso]["countries"]:
+            datos[recurso]["countries"].append(country)
+
+    return list(datos.values())
