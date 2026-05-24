@@ -16,21 +16,28 @@ def consultar_dbpedia(termino, limite=6):
     sparql = SPARQLWrapper(DBPEDIA_ENDPOINT)
     sparql.setReturnFormat(JSON)
     sparql.setQuery(f"""
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
 
-        SELECT DISTINCT ?resource ?label ?abstract ?thumbnail ?country WHERE {{
-                    ?resource rdfs:label ?label .
-          FILTER (LANG(?label) IN ("en", "es"))
-          FILTER (CONTAINS(LCASE(STR(?label)), "{consulta}"))
-                    OPTIONAL {{
-                        ?resource dbo:abstract ?abstract .
-                        FILTER (LANG(?abstract) IN ("en", "es"))
-                    }}
-                    OPTIONAL {{ ?resource dbo:thumbnail ?thumbnail . }}
-                    OPTIONAL {{ ?resource dbo:country ?country . }}
-        }}
-        LIMIT {limite}
+SELECT DISTINCT ?resource ?label ?abstract ?thumbnail WHERE {{
+
+    ?resource rdf:type dbo:Food .
+    ?resource rdfs:label ?label .
+
+    FILTER(LANG(?label) IN ("en", "es"))
+    FILTER(CONTAINS(LCASE(STR(?label)), "{consulta}"))
+
+    OPTIONAL {{
+        ?resource dbo:abstract ?abstract .
+        FILTER(LANG(?abstract) IN ("en", "es"))
+    }}
+
+    OPTIONAL {{
+        ?resource dbo:thumbnail ?thumbnail .
+    }}
+}}
+LIMIT {limite}
         """)
 
     try:
