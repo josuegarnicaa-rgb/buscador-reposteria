@@ -163,7 +163,6 @@ def buscar(termino):
                 {
                     "nombre": individuo,
                     "tipo": "Individuo",
-                    "fuente": "local",
                     "clases": clases,
                     "superclases": superclases,
                     "atributos": dict(ONTOLOGIA["atributos"].get(individuo, {})),
@@ -182,7 +181,6 @@ def buscar(termino):
                 {
                     "nombre": clase,
                     "tipo": "Clase",
-                    "fuente": "local",
                     "clases": [],
                     "superclases": obtener_superclases(clase),
                     "atributos": {},
@@ -219,8 +217,8 @@ def api_buscar():
 
     return jsonify(
         {
-            "termino": termino,
-            "resultados": resultados_locales + resultados_dbpedia,
+            "resultados": resultados_locales,
+            "dbpedia": resultados_dbpedia,
             "fuentes": {
                 "local": len(resultados_locales),
                 "dbpedia": len(resultados_dbpedia),

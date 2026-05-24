@@ -7,7 +7,7 @@ import { useSummary } from './hooks/useSummary'
 function App() {
   const [termino, setTermino] = useState('')
   const { resumen, error: errorSummary } = useSummary()
-  const { buscar, resultados, buscado, cargando, error } = useSearch()
+  const { buscar, resultados: data, buscado, cargando, error } = useSearch()
 
   const manejarSubmit = (evento: SubmitEvent<HTMLFormElement>) => {
     evento.preventDefault()
@@ -62,20 +62,20 @@ function App() {
                     Resultados para “{buscado}”
                   </h2>
                   <p className="mt-1 text-sm text-stone-600">
-                    {resultados.length} coincidencia{resultados.length === 1 ? '' : 's'} encontrada{resultados.length === 1 ? '' : 's'}
+                    {data?.fuentes.local} coincidencia{data?.fuentes.local === 1 ? '' : 's'} encontrada{data?.fuentes.local === 1 ? '' : 's'}
                   </p>
                 </div>
               </div>
             ) : null}
 
-            {buscado && resultados.length === 0 && !cargando ? (
+            {buscado && data?.fuentes.local === 0 && !cargando ? (
               <div className="rounded-[1.75rem] border border-stone-200 bg-white px-5 py-6 text-stone-600">
                 No se encontraron resultados.
               </div>
             ) : null}
 
             <div className="grid gap-5 lg:grid-cols-2">
-              {resultados.map((resultado) => (
+              {data?.resultados.map((resultado) => (
                 <article
                   key={resultado.nombre}
                   className="overflow-hidden rounded-[1.75rem] bg-white p-5 hover:-translate-y-0.5"
@@ -128,6 +128,37 @@ function App() {
                   </div>
                 </article>
               ))}
+              {
+                data?.dbpedia.map((dbp) => (
+                  <article
+                    key={dbp.nombre}
+                    className="overflow-hidden rounded-[1.75rem] bg-white p-5 hover:-translate-y-0.5"
+                  >
+                    <div className="flex flex-wrap items-start justify-between gap-3">
+                      <div>
+                        <h3 className="text-xl font-semibold text-stone-900">{dbp.nombre}</h3>
+                      </div>
+                      <div className="flex flex-col items-end gap-2">
+                      </div>
+                    </div>
+
+                    {dbp.imagen ? (
+                      <img
+                        src={dbp.imagen}
+                        alt={dbp.nombre}
+                        className="mt-4 h-48 w-full rounded-2xl object-cover"
+                      />
+                    ) : null}
+
+                    {dbp.abstract ? (
+                      <p className="mt-4 text-sm leading-6 text-stone-600">{dbp.abstract}</p>
+                    ) : null}
+                    {dbp.country ? (
+                      <p className="mt-4 text-sm leading-6 text-stone-600">{dbp.country}</p>
+                    ) : null}
+                  </article>
+                ))
+              }
             </div>
           </section>
         </main>

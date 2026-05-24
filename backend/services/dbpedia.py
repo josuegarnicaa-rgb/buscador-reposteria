@@ -20,21 +20,28 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX dbo: <http://dbpedia.org/ontology/>
 
-SELECT DISTINCT ?resource ?label ?abstract ?thumbnail WHERE {{
+SELECT DISTINCT ?resource ?label ?abstract ?thumbnail ?countryLabel WHERE {{
 
     ?resource rdf:type dbo:Food .
     ?resource rdfs:label ?label .
 
-    FILTER(LANG(?label) IN ("en", "es"))
+    FILTER(LANG(?label) IN ("es"))
     FILTER(CONTAINS(LCASE(STR(?label)), "{consulta}"))
 
     OPTIONAL {{
         ?resource dbo:abstract ?abstract .
-        FILTER(LANG(?abstract) IN ("en", "es"))
+        FILTER(LANG(?abstract) IN ("es"))
     }}
 
     OPTIONAL {{
         ?resource dbo:thumbnail ?thumbnail .
+    }}
+
+    OPTIONAL {{
+        ?resource dbo:country ?country .
+        ?country rdfs:label ?countryLabel .
+        
+        FILTER(LANG(?countryLabel) IN ("es"))
     }}
 }}
 LIMIT {limite}
@@ -52,22 +59,13 @@ LIMIT {limite}
         label = fila.get("label", {}).get("value", "")
         abstract = fila.get("abstract", {}).get("value", "")
         thumbnail = fila.get("thumbnail", {}).get("value", "")
-        country = fila.get("country", {}).get("value", "")
+        country = fila.get("countryLabel", {}).get("value", "")
 
         datos.append(
             {
                 "nombre": label or recurso.rsplit("/", 1)[-1],
-                "tipo": "DBpedia",
-                "fuente": "dbpedia",
-                "clases": [],
-                "superclases": [],
-                "atributos": {
-                    "abstract": [abstract] if abstract else [],
-                    "country": [country] if country else [],
-                },
-                "relaciones": {},
-                "usado_en": {},
-                "descripcion": abstract,
+                "abstract": abstract if abstract else "",
+                "country": country if country else "",
                 "enlace": recurso,
                 "imagen": thumbnail,
             }

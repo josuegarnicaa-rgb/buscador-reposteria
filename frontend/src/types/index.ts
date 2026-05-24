@@ -5,24 +5,28 @@ export type Resumen = {
   individuos: number
 }
 
+export type DBpedia = {
+  abstract: string
+  country: string
+  enlace: string
+  imagen: string
+  nombre: string
+}
+
 export type Resultado = {
   nombre: string
   tipo: string
-  fuente?: string
   clases: string[]
   superclases: string[]
   atributos: Record<string, string[]>
   relaciones: Record<string, string[]>
   usado_en: Record<string, string[]>
-  descripcion?: string
-  enlace?: string
-  imagen?: string
 }
 
 export type BusquedaResponse = {
-  termino?: string
   resultados: Resultado[]
-  fuentes?: {
+  dbpedia: DBpedia[]
+  fuentes: {
     local: number
     dbpedia: number
   }

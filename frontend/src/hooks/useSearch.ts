@@ -3,7 +3,7 @@ import type { BusquedaResponse, Resultado } from '../types'
 import { API_BASE_URL } from '../config'
 
 export const useSearch = () => {
-  const [resultados, setResultados] = useState<Resultado[]>([])
+  const [resultados, setResultados] = useState<BusquedaResponse | null>(null)
   const [buscado, setBuscado] = useState('')
   const [cargando, setCargando] = useState(false)
   const [error, setError] = useState('')
@@ -12,7 +12,7 @@ export const useSearch = () => {
     const consulta = valor.trim()
 
     if (!consulta) {
-      setResultados([])
+      setResultados(null)
       setBuscado('')
       setError('')
       return
@@ -31,7 +31,7 @@ export const useSearch = () => {
       }
 
       const data = (await response.json()) as BusquedaResponse
-      setResultados(data.resultados)
+      setResultados(data)
       setBuscado(consulta)
     } catch {
       setError('Ocurrio un error al realizar la busqueda.')
