@@ -78,7 +78,7 @@ function App() {
               {data?.resultados.map((resultado) => (
                 <article
                   key={resultado.nombre}
-                  className="overflow-hidden rounded-[1.75rem] bg-white p-5 hover:-translate-y-0.5"
+                  className="overflow-hidden rounded-[1.75rem] bg-white p-5 hover:-translate-y-0.5 hover:shadow-lg"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div>
