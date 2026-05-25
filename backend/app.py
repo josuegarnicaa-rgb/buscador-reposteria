@@ -219,6 +219,7 @@ def api_buscar():
         {
             "resultados": resultados_locales,
             "dbpedia": resultados_dbpedia,
+            "total": len(resultados_locales) + len(resultados_dbpedia),
             "fuentes": {
                 "local": len(resultados_locales),
                 "dbpedia": len(resultados_dbpedia),

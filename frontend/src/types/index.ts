@@ -28,6 +28,7 @@ export type Resultado = {
 export type BusquedaResponse = {
   resultados: Resultado[]
   dbpedia: DBpedia[]
+  total: number
   fuentes: {
     local: number
     dbpedia: number

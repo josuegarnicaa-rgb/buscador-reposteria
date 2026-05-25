@@ -62,13 +62,13 @@ function App() {
                     Resultados para “{buscado}”
                   </h2>
                   <p className="mt-1 text-sm text-stone-600">
-                    {data?.fuentes.local} coincidencia{data?.fuentes.local === 1 ? '' : 's'} encontrada{data?.fuentes.local === 1 ? '' : 's'}
+                    {data?.total} coincidencia{data?.total === 1 ? '' : 's'} encontrada{data?.total === 1 ? '' : 's'}
                   </p>
                 </div>
               </div>
             ) : null}
 
-            {buscado && data?.fuentes.local === 0 && !cargando ? (
+            {buscado && data?.total === 0 && !cargando ? (
               <div className="rounded-[1.75rem] border border-stone-200 bg-white px-5 py-6 text-stone-600">
                 No se encontraron resultados.
               </div>
