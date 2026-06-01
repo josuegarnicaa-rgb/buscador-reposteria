@@ -16,6 +16,9 @@ type TextosInterfaz = {
   resultsFoundSingular: string
   resultsFoundPlural: string
   noResults: string
+  localResultsHeading: string
+  dbpediaRemoteHeading: string
+  dbpediaLocalHeading: string
   elementPrefix: string
   typeLabel: string
   classesLabel: string
@@ -57,6 +60,9 @@ const textos: Record<Idioma, TextosInterfaz> = {
     resultsFoundSingular: 'coincidencia encontrada',
     resultsFoundPlural: 'coincidencias encontradas',
     noResults: 'No se encontraron resultados.',
+    localResultsHeading: 'Ontología local',
+    dbpediaRemoteHeading: 'DBpedia remota',
+    dbpediaLocalHeading: 'DBpedia local',
     elementPrefix: 'Elemento',
     typeLabel: 'Tipo',
     classesLabel: 'Clases',
@@ -88,6 +94,9 @@ const textos: Record<Idioma, TextosInterfaz> = {
     resultsFoundSingular: 'match found',
     resultsFoundPlural: 'matches found',
     noResults: 'No results found.',
+    localResultsHeading: 'Local ontology',
+    dbpediaRemoteHeading: 'Remote DBpedia',
+    dbpediaLocalHeading: 'Local DBpedia',
     elementPrefix: 'Item',
     typeLabel: 'Type',
     classesLabel: 'Classes',
@@ -119,6 +128,9 @@ const textos: Record<Idioma, TextosInterfaz> = {
     resultsFoundSingular: 'correspondência encontrada',
     resultsFoundPlural: 'correspondências encontradas',
     noResults: 'Nenhum resultado encontrado.',
+    localResultsHeading: 'Ontologia local',
+    dbpediaRemoteHeading: 'DBpedia remota',
+    dbpediaLocalHeading: 'DBpedia local',
     elementPrefix: 'Item',
     typeLabel: 'Tipo',
     classesLabel: 'Classes',
@@ -150,6 +162,9 @@ const textos: Record<Idioma, TextosInterfaz> = {
     resultsFoundSingular: 'correspondance trouvée',
     resultsFoundPlural: 'correspondances trouvées',
     noResults: 'Aucun résultat trouvé.',
+    localResultsHeading: 'Ontologie locale',
+    dbpediaRemoteHeading: 'DBpedia distante',
+    dbpediaLocalHeading: 'DBpedia locale',
     elementPrefix: 'Élément',
     typeLabel: 'Type',
     classesLabel: 'Classes',
@@ -181,6 +196,9 @@ const textos: Record<Idioma, TextosInterfaz> = {
     resultsFoundSingular: 'corrispondenza trovata',
     resultsFoundPlural: 'corrispondenze trovate',
     noResults: 'Nessun risultato trovato.',
+    localResultsHeading: 'Ontologia locale',
+    dbpediaRemoteHeading: 'DBpedia remota',
+    dbpediaLocalHeading: 'DBpedia locale',
     elementPrefix: 'Elemento',
     typeLabel: 'Tipo',
     classesLabel: 'Classi',

@@ -4,6 +4,30 @@ import unicodedata
 IDIOMAS_VALIDOS = {'es', 'en', 'pt', 'fr', 'it'}
 IDIOMA_POR_DEFECTO = 'es'
 
+ORIGENES = {
+    'LOCAL': {
+        'es': 'LOCAL',
+        'en': 'LOCAL',
+        'pt': 'LOCAL',
+        'fr': 'LOCAL',
+        'it': 'LOCALE',
+    },
+    'DBPEDIA REMOTO': {
+        'es': 'DBPEDIA REMOTO',
+        'en': 'REMOTE DBPEDIA',
+        'pt': 'DBPEDIA REMOTA',
+        'fr': 'DBPEDIA DISTANTE',
+        'it': 'DBPEDIA REMOTA',
+    },
+    'DBPEDIA LOCAL': {
+        'es': 'DBPEDIA LOCAL',
+        'en': 'LOCAL DBPEDIA',
+        'pt': 'DBPEDIA LOCAL',
+        'fr': 'DBPEDIA LOCALE',
+        'it': 'DBPEDIA LOCALE',
+    },
+}
+
 TRADUCCIONES = {
     'animal': {'es': 'animal', 'en': 'animal', 'pt': 'animal', 'fr': 'animal', 'it': 'animale'},
     'azucar': {'es': 'azúcar', 'en': 'sugar', 'pt': 'açúcar', 'fr': 'sucre', 'it': 'zucchero'},
@@ -100,3 +124,8 @@ def traducir_mapa(valores, idioma):
         traducir_identificador(clave, idioma): traducir_lista(valores_clave, idioma)
         for clave, valores_clave in valores.items()
     }
+
+
+def traducir_origen(origen, idioma):
+    idioma = normalizar_idioma(idioma)
+    return ORIGENES.get(origen, {}).get(idioma, origen)

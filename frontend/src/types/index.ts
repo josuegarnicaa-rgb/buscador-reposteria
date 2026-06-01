@@ -8,6 +8,7 @@ export type Resumen = {
 export type Idioma = 'es' | 'en' | 'pt' | 'fr' | 'it'
 
 export type DBpedia = {
+  id: string
   abstract: string
   countries: string[]
   enlace: string
@@ -15,6 +16,7 @@ export type DBpedia = {
   nombre: string
   typeLabel: string
   ingredientes: string[]
+  origen: string
 }
 
 export type Resultado = {
@@ -26,15 +28,18 @@ export type Resultado = {
   atributos: Record<string, string[]>
   relaciones: Record<string, string[]>
   usado_en: Record<string, string[]>
+  origen: string
 }
 
 export type BusquedaResponse = {
   resultados: Resultado[]
   dbpedia: DBpedia[]
+  dbpedia_local: DBpedia[]
   total: number
   fuentes: {
     local: number
     dbpedia: number
+    dbpedia_local: number
   }
 }
 

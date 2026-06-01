@@ -1,6 +1,6 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
 
-from services.i18n import normalizar_idioma
+from services.i18n import normalizar_idioma, traducir_origen
 
 DBPEDIA_ENDPOINT = "https://dbpedia.org/sparql"
 
@@ -82,6 +82,7 @@ LIMIT {limite}
 
         if recurso not in datos:
             datos[recurso] = {
+                "id": recurso,
                 "nombre": label or recurso.rsplit("/", 1)[-1],
                 "abstract": abstract,
                 "countries": [],
@@ -89,6 +90,7 @@ LIMIT {limite}
                 "imagen": thumbnail,
                 "typeLabel": typeLabel,
                 "ingredientes": [],
+                "origen": traducir_origen("DBPEDIA REMOTO", idioma),
             }
 
         if ingredient and ingredient not in datos[recurso]["ingredientes"]:

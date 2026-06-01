@@ -4,12 +4,14 @@ import xml.etree.ElementTree as ET
 from collections import defaultdict
 
 from services.dbpedia import consultar_dbpedia
+from services.dbpedia_local import buscar_dbpedia_local
 from services.i18n import (
     normalizar_idioma,
     normalizar_texto,
     traducir_identificador,
     traducir_lista,
     traducir_mapa,
+    traducir_origen,
     traducir_texto,
 )
 
@@ -165,6 +167,7 @@ def traducir_resultado(resultado, idioma):
         "atributos": traducir_mapa(resultado["atributos"], idioma),
         "relaciones": traducir_mapa(resultado["relaciones"], idioma),
         "usado_en": traducir_mapa(resultado["usado_en"], idioma),
+        "origen": traducir_origen("LOCAL", idioma),
     }
 
 
@@ -241,16 +244,19 @@ def api_buscar():
     termino = request.args.get("termino", "")
     idioma = normalizar_idioma(request.args.get("idioma", "es"))
     resultados_locales = buscar(termino, idioma)
-    resultados_dbpedia = consultar_dbpedia(termino, idioma)
+    resultados_dbpedia_remotos = consultar_dbpedia(termino, idioma)
+    resultados_dbpedia_locales = buscar_dbpedia_local(termino, idioma)
 
     return jsonify(
         {
             "resultados": resultados_locales,
-            "dbpedia": resultados_dbpedia,
-            "total": len(resultados_locales) + len(resultados_dbpedia),
+            "dbpedia": resultados_dbpedia_remotos,
+            "dbpedia_local": resultados_dbpedia_locales,
+            "total": len(resultados_locales) + len(resultados_dbpedia_remotos) + len(resultados_dbpedia_locales),
             "fuentes": {
                 "local": len(resultados_locales),
-                "dbpedia": len(resultados_dbpedia),
+                "dbpedia": len(resultados_dbpedia_remotos),
+                "dbpedia_local": len(resultados_dbpedia_locales),
             },
         }
     )
