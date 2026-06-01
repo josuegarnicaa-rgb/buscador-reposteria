@@ -1,6 +1,7 @@
-import { useState } from 'react'
-import type { SubmitEvent } from 'react'
-import { MapGroup, DetailGroup, ResumenCard, NavBar } from './components'
+import { useEffect, useState } from 'react'
+import type { FormEvent } from 'react'
+import './App.css'
+import { MapGroup, DetailGroup } from './components'
 import { useSearch } from './hooks/useSearch'
 import { useSummary } from './hooks/useSummary'
 
@@ -9,190 +10,224 @@ function App() {
   const { resumen, error: errorSummary } = useSummary()
   const { buscar, resultados: data, buscado, cargando, error } = useSearch()
 
-  const manejarSubmit = (evento: SubmitEvent<HTMLFormElement>) => {
+  useEffect(() => {
+    const temporizador = window.setTimeout(() => {
+      void buscar(termino)
+    }, 500)
+
+    return () => window.clearTimeout(temporizador)
+  }, [termino, buscar])
+
+  const manejarSubmit = (evento: FormEvent<HTMLFormElement>) => {
     evento.preventDefault()
     void buscar(termino)
   }
 
+  const tieneDatosMapa = (mapa: Record<string, string[]>) => {
+    return Object.keys(mapa).length > 0
+  }
+
   return (
-    <div className="min-h-screen bg-amber-50 text-stone-900">
-      <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 py-6 sm:px-6 lg:px-8">
+    <div className="pagina">
+      <div className="decoracion decoracion1"></div>
+      <div className="decoracion decoracion2"></div>
+      <div className="decoracion decoracion3"></div>
+      <div className="decoracion decoracion4"></div>
 
-        <NavBar />
+      <main className="contenedorPrincipal">
+        <section className="hero">
+          <div className="heroSplash splash1"></div>
+          <div className="heroSplash splash2"></div>
+          <div className="heroSplash splash3"></div>
+          <div className="heroSplash splash4"></div>
 
-        <main className="flex-1 py-8 sm:py-10">
-          <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            <ResumenCard label="Clases" value={resumen.clases} accent="from-amber-200 to-orange-100" />
-            <ResumenCard label="Object Properties" value={resumen.propiedades_objeto} accent="from-rose-200 to-orange-100" />
-            <ResumenCard label="Data Properties" value={resumen.propiedades_datos} accent="from-yellow-100 to-amber-50" />
-            <ResumenCard label="Individuos" value={resumen.individuos} accent="from-orange-200 to-amber-100" />
-          </section>
+          <div className="heroContenido">
+            <div className="heroEtiqueta">
+              REPOSTERÍA
+            </div>
 
-          <section className="mt-6 rounded-4xl bg-white/85 p-4 backdrop-blur sm:p-3">
-            <form onSubmit={manejarSubmit} className="flex flex-col gap-1 md:flex-row">
-              <input
-                type="text"
-                name="termino"
-                value={termino}
-                onChange={(event) => setTermino(event.target.value)}
-                placeholder="Buscar: chocolate, torta, huevo, receta..."
-                className="flex-1 rounded-2xl bg-white px-2 py-2 text-base outline-none ring-0 transition  "
-              />
-              <button
-                type="submit"
-                className="rounded-2xl bg-stone-900 px-6 py-4 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-stone-800 disabled:cursor-not-allowed disabled:opacity-60"
-                disabled={cargando}
-              >
-                {cargando ? 'Buscando...' : 'Buscar'}
-              </button>
-            </form>
+            <h1 className="heroTitulo">
+              Consulta productos, recetas, ingredientes, herramientas y
+              relaciones de la ontología.
+            </h1>
 
-            {error || errorSummary ? (
-              <p className="mt-4 rounded-2xl bg-rose-50 px-4 py-3 text-sm text-rose-400">
-                {error || errorSummary}
-              </p>
-            ) : null}
-          </section>
+            <p className="heroTexto">
+              Encuentra tortas, galletas, masas, cremas y recetas relacionadas
+              con tu ontología de repostería.
+            </p>
+          </div>
+        </section>
 
-          <section className="mt-8">
-            {buscado ? (
-              <div className="mb-4 flex items-end justify-between gap-3">
-                <div>
-                  <h2 className="text-2xl font-semibold tracking-tight text-stone-900">
-                    Resultados para “{buscado}”
-                  </h2>
-                  <p className="mt-1 text-sm text-stone-600">
-                    {data?.total} coincidencia{data?.total === 1 ? '' : 's'} encontrada{data?.total === 1 ? '' : 's'}
-                  </p>
-                </div>
+        <section className="resumenGrid">
+          <div className="tarjetaResumen amarillo">
+            <div className="lineaDecorativa"></div>
+            <h3>CLASES</h3>
+            <p>{resumen?.clases ?? 0}</p>
+          </div>
+
+          <div className="tarjetaResumen rosado">
+            <div className="lineaDecorativa"></div>
+            <h3>OBJECT PROPERTIES</h3>
+            <p>{resumen?.propiedades_objeto ?? 0}</p>
+          </div>
+
+          <div className="tarjetaResumen lila">
+            <div className="lineaDecorativa"></div>
+            <h3>DATA PROPERTIES</h3>
+            <p>{resumen?.propiedades_datos ?? 0}</p>
+          </div>
+
+          <div className="tarjetaResumen durazno">
+            <div className="lineaDecorativa"></div>
+            <h3>INDIVIDUOS</h3>
+            <p>{resumen?.individuos ?? 0}</p>
+          </div>
+        </section>
+
+        <section className="buscadorCaja">
+          <form className="buscadorFormulario" onSubmit={manejarSubmit}>
+            <input
+              type="text"
+              value={termino}
+              onChange={(evento) => setTermino(evento.target.value)}
+              placeholder="Buscar: torta de chocolate, galletas de crema, recetaTortaChocolate..."
+              className="buscadorInput"
+            />
+
+            <button type="submit" className="botonBuscar">
+              Buscar
+            </button>
+          </form>
+
+          {cargando && (
+            <p className="mensajeInfo">Buscando resultados...</p>
+          )}
+
+          {error && (
+            <p className="mensajeError">{error}</p>
+          )}
+
+          {errorSummary && (
+            <p className="mensajeError">{errorSummary}</p>
+          )}
+        </section>
+
+        {data && (
+          <section className="resultadosSeccion">
+            <div className="tituloResultados">
+              <div>
+                <h2>Resultados para “{buscado}”</h2>
+                <span>{data.total} coincidencias encontradas</span>
               </div>
-            ) : null}
 
-            {buscado && data?.total === 0 && !cargando ? (
-              <div className="rounded-[1.75rem] border border-stone-200 bg-white px-5 py-6 text-stone-600">
-                No se encontraron resultados.
+              {typeof data.tiempo_ms === 'number' && (
+                <p className="tiempoBusqueda">
+                  Tiempo: {data.tiempo_ms} ms
+                </p>
+              )}
+            </div>
+
+            {data.total === 0 ? (
+              <div className="sinResultados">
+                <h3>No se encontraron resultados</h3>
+                <p>
+                  Intenta buscar con otra palabra como torta, chocolate,
+                  galletas, crema o masa.
+                </p>
               </div>
-            ) : null}
-
-            <div className="grid gap-5 lg:grid-cols-2">
-              {data?.resultados.map((resultado) => (
-                <article
-                  key={resultado.nombre}
-                  className="overflow-hidden rounded-[1.75rem] bg-white p-5 hover:-translate-y-0.5 hover:shadow-lg"
-                >
-                  <div className="flex flex-wrap items-start justify-between gap-3">
-                    <div>
-                      <h3 className="text-xl font-semibold text-stone-900">{resultado.nombre}</h3>
-                      <p className="mt-1 text-sm text-stone-500">Elemento {resultado.tipo}</p>
+            ) : (
+              <div className="resultadosGrid">
+                {data.resultados.map((resultado) => (
+                  <article className="tarjetaResultado" key={`local-${resultado.nombre}`}>
+                    <div className="resultadoCabecera">
+                      <span className="resultadoOrigen">Ontología local</span>
+                      <span className="resultadoTipo">{resultado.tipo}</span>
                     </div>
-                    <div className="flex flex-col items-end gap-2">
-                      <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-amber-900">
-                        {resultado.tipo}
+
+                    <h3 className="resultadoTitulo">{resultado.nombre}</h3>
+
+                    {resultado.clases.length > 0 && (
+                      <DetailGroup title="Clases" items={resultado.clases} />
+                    )}
+
+                    {resultado.superclases.length > 0 && (
+                      <DetailGroup title="Superclases" items={resultado.superclases} />
+                    )}
+
+                    {tieneDatosMapa(resultado.atributos) && (
+                      <MapGroup title="Atributos" data={resultado.atributos} />
+                    )}
+
+                    {tieneDatosMapa(resultado.relaciones) && (
+                      <MapGroup title="Relaciones" data={resultado.relaciones} />
+                    )}
+
+                    {tieneDatosMapa(resultado.usado_en) && (
+                      <MapGroup title="Usado en" data={resultado.usado_en} />
+                    )}
+                  </article>
+                ))}
+
+                {data.dbpedia.map((resultado) => (
+                  <article className="tarjetaResultado" key={`dbpedia-${resultado.enlace}`}>
+                    <div className="resultadoCabecera">
+                      <span className="resultadoOrigen">DBpedia</span>
+                      <span className="resultadoTipo">
+                        {resultado.typeLabel || 'Resultado externo'}
                       </span>
                     </div>
-                  </div>
 
-                  <div className="mt-5 space-y-4 text-sm text-stone-700">
-                    {resultado.clases.length > 0 ? (
-                      <DetailGroup title="Clases" items={resultado.clases} />
-                    ) : null}
-                    {resultado.superclases.length > 0 ? (
-                      <DetailGroup title="Superclases" items={resultado.superclases} />
-                    ) : null}
-                    {Object.keys(resultado.relaciones).length > 0 ? (
-                      <MapGroup title="Relaciones semánticas" data={resultado.relaciones} />
-                    ) : null}
-                    {Object.keys(resultado.atributos).length > 0 ? (
-                      <MapGroup title="Atributos" data={resultado.atributos} />
-                    ) : null}
-                    {Object.keys(resultado.usado_en).length > 0 ? (
-                      <MapGroup title="Usado en" data={resultado.usado_en} />
-                    ) : null}
-                  </div>
-                </article>
-              ))}
-              {data?.dbpedia.map((dbp) => (
-                <article
-                  key={dbp.enlace}
-                  className="overflow-hidden rounded-[1.75rem] border border-stone-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
-                >
-                  <div className="relative overflow-hidden bg-linear-to-br from-amber-100 via-orange-50 to-stone-100">
-                    {dbp.imagen ? (
+                    <h3 className="resultadoTitulo">{resultado.nombre}</h3>
+
+                    {resultado.imagen ? (
                       <img
-                        src={dbp.imagen}
-                        alt={dbp.nombre}
-                        className="h-56 w-full object-cover"
+                        src={resultado.imagen}
+                        alt={resultado.nombre}
+                        className="resultadoImagen"
                       />
                     ) : (
-                      <div className="flex h-56 items-center justify-center px-6 text-center text-sm font-medium tracking-wide text-stone-500">
-                        Sin imagen disponible para este resultado
+                      <div className="resultadoSinImagen">
+                        Sin imagen disponible
                       </div>
                     )}
 
-                    <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-stone-950/70 to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="mt-3 text-2xl font-semibold leading-tight text-white drop-shadow-sm">
-                        {dbp.nombre}
-                      </h3>
-                    </div>
-                  </div>
+                    {resultado.abstract && (
+                      <p className="resultadoDescripcion">
+                        {resultado.abstract}
+                      </p>
+                    )}
 
-                  <div className="space-y-5 p-5">
-                    {dbp.typeLabel ? (
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-400">
-                          Tipo
-                        </p>
-                        <p className="mt-1 text-sm font-medium text-stone-800">{dbp.typeLabel}</p>
-                      </div>
-                    ) : null}
+                    {resultado.ingredientes.length > 0 && (
+                      <DetailGroup
+                        title="Ingredientes"
+                        items={resultado.ingredientes}
+                      />
+                    )}
 
-                    {dbp.abstract ? (
-                      <p className="text-sm leading-6 text-stone-600">{dbp.abstract}</p>
-                    ) : null}
+                    {resultado.countries.length > 0 && (
+                      <DetailGroup
+                        title="Categorías"
+                        items={resultado.countries}
+                      />
+                    )}
 
-                    {dbp.countries.length > 0 ? (
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-400">
-                          Países
-                        </p>
-                        <div className="mt-3 flex flex-wrap gap-2">
-                          {dbp.countries.map((country) => (
-                            <span
-                              key={country}
-                              className="rounded-full bg-stone-100 px-3 py-1 text-xs font-medium text-stone-700"
-                            >
-                              {country}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    ) : null}
-
-                    {dbp.ingredientes.length > 0 ? (
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-400">
-                          Ingredientes
-                        </p>
-                        <div className="mt-3 flex flex-wrap gap-2">
-                          {dbp.ingredientes.map((ingrediente) => (
-                            <span
-                              key={ingrediente}
-                              className="rounded-full bg-amber-100 px-3 py-1 text-xs font-medium text-amber-900"
-                            >
-                              {ingrediente}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    ) : null}
-                  </div>
-                </article>
-              ))}
-            </div>
+                    {resultado.enlace && (
+                      <a
+                        href={resultado.enlace}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="resultadoEnlace"
+                      >
+                        Ver recurso
+                      </a>
+                    )}
+                  </article>
+                ))}
+              </div>
+            )}
           </section>
-        </main>
-      </div>
+        )}
+      </main>
     </div>
   )
 }

@@ -29,9 +29,9 @@ export type BusquedaResponse = {
   resultados: Resultado[]
   dbpedia: DBpedia[]
   total: number
+  tiempo_ms?: number
   fuentes: {
     local: number
     dbpedia: number
   }
 }
-

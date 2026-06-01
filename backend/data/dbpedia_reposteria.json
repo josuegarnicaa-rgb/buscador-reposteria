@@ -1,0 +1,47 @@
+[
+  {
+    "nombre": "Torta de chocolate",
+    "abstract": "Postre preparado con harina, huevo, azúcar y chocolate. Es común en cumpleaños y celebraciones.",
+    "countries": ["Uso general"],
+    "enlace": "local:torta-de-chocolate",
+    "imagen": "",
+    "typeLabel": "Postre offline",
+    "ingredientes": ["chocolate", "harina", "huevo", "azúcar"]
+  },
+  {
+    "nombre": "Galletas de crema",
+    "abstract": "Galletas dulces que pueden prepararse o rellenarse con crema, mantequilla o crema pastelera.",
+    "countries": ["Uso general"],
+    "enlace": "local:galletas-de-crema",
+    "imagen": "",
+    "typeLabel": "Postre offline",
+    "ingredientes": ["galleta", "crema", "harina", "azúcar"]
+  },
+  {
+    "nombre": "Receta de torta de chocolate",
+    "abstract": "Receta local de repostería para una torta de chocolate con relleno, decoración y horneado.",
+    "countries": ["Ontología local"],
+    "enlace": "local:receta-torta-chocolate",
+    "imagen": "",
+    "typeLabel": "Receta offline",
+    "ingredientes": ["chocolate", "leche", "mantequilla", "polvo de hornear"]
+  }
+  ,{
+  "nombre": "Galletas de fresa",
+  "abstract": "Galletas dulces preparadas con sabor a fresa o relleno de crema de fresa.",
+  "countries": ["Repostería local"],
+  "enlace": "local:galletas-de-fresa",
+  "imagen": "",
+  "typeLabel": "Receta offline",
+  "ingredientes": ["galleta", "fresa", "harina", "azúcar", "mantequilla"]
+  },
+  {
+  "nombre": "Masa para pizza",
+  "abstract": "Masa preparada con harina, agua, levadura, sal y aceite. Aunque pertenece más a panadería, puede aparecer como preparación de masa.",
+  "countries": ["Panadería local"],
+  "enlace": "local:masa-pizza",
+  "imagen": "",
+  "typeLabel": "Preparación offline",
+  "ingredientes": ["harina", "agua", "levadura", "sal", "aceite"]
+ }
+]
