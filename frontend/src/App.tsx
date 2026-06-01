@@ -30,7 +30,7 @@ function App() {
     <div className="min-h-screen bg-amber-50 text-stone-900">
       <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 py-6 sm:px-6 lg:px-8">
 
-        <NavBar badge={textos.navBadge} title={textos.navTitle} subtitle={textos.navSubtitle} />
+        <NavBar badge={textos.navBadge} title={textos.navTitle} />
 
         <main className="flex-1 py-8 sm:py-10">
           <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
