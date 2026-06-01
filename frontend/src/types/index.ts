@@ -5,6 +5,8 @@ export type Resumen = {
   individuos: number
 }
 
+export type Idioma = 'es' | 'en' | 'pt' | 'fr' | 'it'
+
 export type DBpedia = {
   abstract: string
   countries: string[]
@@ -16,6 +18,7 @@ export type DBpedia = {
 }
 
 export type Resultado = {
+  id: string
   nombre: string
   tipo: string
   clases: string[]

@@ -1,5 +1,7 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
 
+from services.i18n import normalizar_idioma
+
 DBPEDIA_ENDPOINT = "https://dbpedia.org/sparql"
 
 
@@ -7,8 +9,9 @@ def _normalizar_termino(termino):
     return termino.strip().lower().replace('"', "").replace("'", "")
 
 
-def consultar_dbpedia(termino, limite=6):
+def consultar_dbpedia(termino, idioma='es', limite=6):
     consulta = _normalizar_termino(termino)
+    idioma = normalizar_idioma(idioma)
 
     if not consulta:
         return []
@@ -25,12 +28,12 @@ SELECT DISTINCT ?resource ?label ?abstract ?thumbnail ?countryLabel ?typeLabel ?
     ?resource rdf:type dbo:Food .
     ?resource rdfs:label ?label .
 
-    FILTER(LANG(?label) IN ("es"))
+    FILTER(LANGMATCHES(LANG(?label), "{idioma}"))
     FILTER(CONTAINS(LCASE(STR(?label)), "{consulta}"))
 
     OPTIONAL {{
         ?resource dbo:abstract ?abstract .
-        FILTER(LANG(?abstract) IN ("es"))
+        FILTER(LANGMATCHES(LANG(?abstract), "{idioma}"))
     }}
 
     OPTIONAL {{
@@ -41,20 +44,20 @@ SELECT DISTINCT ?resource ?label ?abstract ?thumbnail ?countryLabel ?typeLabel ?
         ?resource dbo:country ?country .
         ?country rdfs:label ?countryLabel .
 
-        FILTER(LANG(?countryLabel) IN ("es"))
+        FILTER(LANGMATCHES(LANG(?countryLabel), "{idioma}"))
     }}
     OPTIONAL {{
         ?resource rdf:type ?type .
         ?type rdfs:label ?typeLabel .
 
-        FILTER(LANG(?typeLabel) IN ("es"))
+        FILTER(LANGMATCHES(LANG(?typeLabel), "{idioma}"))
     }}
 
     OPTIONAL {{
         ?resource dbo:ingredient ?ingredient .
         ?ingredient rdfs:label ?ingredientLabel .
 
-        FILTER(LANG(?ingredientLabel) IN ("es"))
+        FILTER(LANGMATCHES(LANG(?ingredientLabel), "{idioma}"))
     }}
 }}
 LIMIT {limite}

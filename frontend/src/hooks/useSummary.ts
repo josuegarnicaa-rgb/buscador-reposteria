@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react"
-import type { Resumen } from "../types"
+import { useEffect, useState } from 'react'
+import type { Idioma, Resumen } from '../types'
 import { API_BASE_URL } from '../config'
+import { obtenerTextos } from '../i18n'
 
 const resumenInicial: Resumen = {
   clases: 0,
@@ -8,7 +9,7 @@ const resumenInicial: Resumen = {
   propiedades_datos: 0,
   individuos: 0,
 }
-export const useSummary = () => {
+export const useSummary = (idioma: Idioma) => {
   const [resumen, setResumen] = useState<Resumen>(resumenInicial)
   const [error, setError] = useState<string>('')
 
@@ -29,7 +30,7 @@ export const useSummary = () => {
           return
         }
 
-        setError('Ocurrio un error al obtener el resumen.')
+        setError(obtenerTextos(idioma).errorResumen)
       })
 
     return () => controller.abort()

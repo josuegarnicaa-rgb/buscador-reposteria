@@ -4,6 +4,14 @@ import xml.etree.ElementTree as ET
 from collections import defaultdict
 
 from services.dbpedia import consultar_dbpedia
+from services.i18n import (
+    normalizar_idioma,
+    normalizar_texto,
+    traducir_identificador,
+    traducir_lista,
+    traducir_mapa,
+    traducir_texto,
+)
 
 app = Flask(__name__, static_folder=None, template_folder=None)
 
@@ -120,35 +128,56 @@ def obtener_superclases(clase, visitadas=None):
     return sorted(visitadas)
 
 
-def texto_busqueda_individuo(individuo):
-    partes = [individuo]
+def texto_busqueda_individuo(individuo, idioma):
+    partes = [individuo, traducir_identificador(individuo, idioma)]
 
     clases = ONTOLOGIA["clases_individuo"].get(individuo, [])
     partes.extend(clases)
+    partes.extend(traducir_lista(clases, idioma))
 
     for clase in clases:
-        partes.extend(obtener_superclases(clase))
+        superclases = obtener_superclases(clase)
+        partes.extend(superclases)
+        partes.extend(traducir_lista(superclases, idioma))
 
     for propiedad, objetos in ONTOLOGIA["relaciones_salida"].get(individuo, {}).items():
         partes.append(propiedad)
         partes.extend(objetos)
+        partes.append(traducir_identificador(propiedad, idioma))
+        partes.extend(traducir_lista(objetos, idioma))
 
     for propiedad, valores in ONTOLOGIA["atributos"].get(individuo, {}).items():
         partes.append(propiedad)
         partes.extend(valores)
+        partes.append(traducir_identificador(propiedad, idioma))
+        partes.extend(traducir_lista(valores, idioma))
 
-    return " ".join(partes).lower()
+    return normalizar_texto(" ".join(partes))
 
 
-def buscar(termino):
-    termino = termino.strip().lower()
+def traducir_resultado(resultado, idioma):
+    return {
+        "id": resultado["nombre"],
+        "nombre": traducir_identificador(resultado["nombre"], idioma),
+        "tipo": traducir_texto(resultado["tipo"], idioma),
+        "clases": traducir_lista(resultado["clases"], idioma),
+        "superclases": traducir_lista(resultado["superclases"], idioma),
+        "atributos": traducir_mapa(resultado["atributos"], idioma),
+        "relaciones": traducir_mapa(resultado["relaciones"], idioma),
+        "usado_en": traducir_mapa(resultado["usado_en"], idioma),
+    }
+
+
+def buscar(termino, idioma='es'):
+    idioma = normalizar_idioma(idioma)
+    termino = normalizar_texto(termino)
     resultados = []
 
     if not termino:
         return resultados
 
     for individuo in sorted(ONTOLOGIA["individuos"]):
-        if termino in texto_busqueda_individuo(individuo):
+        if termino in texto_busqueda_individuo(individuo, idioma):
             clases = sorted(ONTOLOGIA["clases_individuo"].get(individuo, []))
 
             superclases = sorted(
@@ -176,7 +205,8 @@ def buscar(termino):
             )
 
     for clase in sorted(ONTOLOGIA["clases"]):
-        if termino in clase.lower():
+        nombre_traducido = traducir_identificador(clase, idioma)
+        if termino in normalizar_texto(nombre_traducido) or termino in normalizar_texto(clase):
             resultados.append(
                 {
                     "nombre": clase,
@@ -189,7 +219,7 @@ def buscar(termino):
                 }
             )
 
-    return resultados
+    return [traducir_resultado(resultado, idioma) for resultado in resultados]
 
 
 def obtener_resumen():
@@ -209,11 +239,9 @@ def api_resumen():
 @app.get("/api/buscar")
 def api_buscar():
     termino = request.args.get("termino", "")
-    resultados_locales = buscar(termino)
-    resultados_dbpedia = consultar_dbpedia(termino)
-    print("------------------------------")
-    print(resultados_dbpedia)
-    print("------------------------------")
+    idioma = normalizar_idioma(request.args.get("idioma", "es"))
+    resultados_locales = buscar(termino, idioma)
+    resultados_dbpedia = consultar_dbpedia(termino, idioma)
 
     return jsonify(
         {
