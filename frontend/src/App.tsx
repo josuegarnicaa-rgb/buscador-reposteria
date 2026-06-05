@@ -41,8 +41,16 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-amber-50 text-stone-900">
-      <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 py-6 sm:px-6 lg:px-8">
+    <div
+      className="min-h-screen text-stone-900"
+      style={{
+        backgroundImage: 'url(/img1.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    >
+      <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 py-6 sm:px-6 lg:px-8 backdrop-blur-[2px]">
 
         <NavBar badge={textos.navBadge} title={textos.navTitle} />
 
@@ -54,7 +62,7 @@ function App() {
             <ResumenCard label={textos.summaryIndividuos} value={resumen.individuos} accent="from-orange-200 to-amber-100" />
           </section>
 
-          <section className="mt-6 rounded-4xl bg-white/85 p-4 backdrop-blur sm:p-3">
+          <section className="mt-6 rounded-4xl bg-white/90 p-4 backdrop-blur-md sm:p-3 shadow-lg">
             <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-400">
@@ -129,7 +137,7 @@ function App() {
               {data?.resultados.map((resultado) => (
                 <article
                   key={resultado.id}
-                  className="overflow-hidden rounded-[1.75rem] bg-white p-5 hover:-translate-y-0.5 hover:shadow-lg"
+                  className="overflow-hidden rounded-[1.75rem] bg-white/95 p-5 shadow-md hover:-translate-y-0.5 hover:shadow-xl"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div>
