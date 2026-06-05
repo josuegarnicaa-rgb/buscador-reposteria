@@ -14,7 +14,7 @@ interface Props {
 export const DBPediaCard = ({ noImageLabel, classOrigin, typeLabel, countriesLabel, ingredientsLabel, sourceLabel, sourceButton, dbp }: Props) => {
   return (<article
     key={dbp.id}
-    className="overflow-hidden rounded-[1.75rem] border border-stone-200 bg-white/95 shadow-md transition hover:-translate-y-0.5 hover:shadow-xl"
+    className="overflow-hidden rounded-[1.75rem] border border-stone-200 bg-white/90 shadow-md transition hover:-translate-y-0.5 hover:shadow-xl"
   >
     <div className="relative overflow-hidden bg-linear-to-br from-amber-100 via-stone-50 to-stone-100">
       {dbp.imagen ? (

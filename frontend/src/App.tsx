@@ -94,7 +94,7 @@ function App() {
                 value={termino}
                 onChange={(event) => setTermino(event.target.value)}
                 placeholder={textos.searchPlaceholder}
-                className="flex-1 rounded-2xl bg-white px-4 py-3 text-base outline-none ring-1 ring-stone-200 transition focus:ring-2 focus:ring-stone-900/10"
+                className="flex-1 rounded-2xl bg-white/95 px-4 py-3 text-base outline-none ring-1 ring-stone-200 transition focus:ring-2 focus:ring-stone-900/10"
               />
               <button
                 type="submit"
@@ -119,7 +119,7 @@ function App() {
                   <h2 className="text-2xl font-semibold tracking-tight text-stone-900">
                     {textos.resultsFor} “{buscado}”
                   </h2>
-                  <p className="mt-1 text-sm text-stone-600">
+                  <p className="mt-1 text-sm text-bold">
                     {data?.total} {data?.total === 1 ? textos.resultsFoundSingular : textos.resultsFoundPlural}
                   </p>
                 </div>
@@ -127,7 +127,7 @@ function App() {
             ) : null}
 
             {buscado && data?.total === 0 && !cargando ? (
-              <div className="rounded-[1.75rem] border border-stone-200 bg-white px-5 py-6 text-stone-600">
+              <div className="rounded-[1.75rem] border border-stone-200 bg-white/95 px-5 py-6 text-stone-600">
                 {textos.noResults}
               </div>
             ) : null}
