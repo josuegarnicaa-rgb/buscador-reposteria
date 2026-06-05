@@ -36,10 +36,5 @@ export type BusquedaResponse = {
   dbpedia: DBpedia[]
   dbpedia_local: DBpedia[]
   total: number
-  fuentes: {
-    local: number
-    dbpedia: number
-    dbpedia_local: number
-  }
 }
 

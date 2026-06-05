@@ -171,7 +171,7 @@ def traducir_resultado(resultado, idioma):
     }
 
 
-def buscar(termino, idioma='es'):
+def buscar(termino, idioma="es"):
     idioma = normalizar_idioma(idioma)
     termino = normalizar_texto(termino)
     resultados = []
@@ -209,7 +209,9 @@ def buscar(termino, idioma='es'):
 
     for clase in sorted(ONTOLOGIA["clases"]):
         nombre_traducido = traducir_identificador(clase, idioma)
-        if termino in normalizar_texto(nombre_traducido) or termino in normalizar_texto(clase):
+        if termino in normalizar_texto(nombre_traducido) or termino in normalizar_texto(
+            clase
+        ):
             resultados.append(
                 {
                     "nombre": clase,
@@ -250,14 +252,10 @@ def api_buscar():
     return jsonify(
         {
             "resultados": resultados_locales,
-            "dbpedia": resultados_dbpedia_remotos,
-            "dbpedia_local": resultados_dbpedia_locales,
-            "total": len(resultados_locales) + len(resultados_dbpedia_remotos) + len(resultados_dbpedia_locales),
-            "fuentes": {
-                "local": len(resultados_locales),
-                "dbpedia": len(resultados_dbpedia_remotos),
-                "dbpedia_local": len(resultados_dbpedia_locales),
-            },
+            "dbpedia": resultados_dbpedia_remotos + resultados_dbpedia_locales,
+            "total": len(resultados_locales)
+            + len(resultados_dbpedia_remotos)
+            + len(resultados_dbpedia_locales),
         }
     )
 
