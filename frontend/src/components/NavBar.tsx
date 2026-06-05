@@ -7,7 +7,6 @@ export const NavBar = ({ badge, title }: Props) => (
   <header className="overflow-hidden rounded-4xl border border-white/30 bg-white/90 shadow-xl backdrop-blur-sm">
     <div className="relative px-6 py-10 sm:px-10 sm:py-14">
 
-      {/* Glow decorativo en la esquina */}
       <div className="absolute -right-10 -top-10 h-48 w-48 rounded-full bg-amber-300/20 blur-3xl" />
       <div className="absolute -bottom-8 left-1/3 h-32 w-32 rounded-full bg-rose-300/20 blur-2xl" />
 

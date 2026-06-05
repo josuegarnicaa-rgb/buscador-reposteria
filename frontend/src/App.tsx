@@ -56,10 +56,10 @@ function App() {
 
         <main className="flex-1 py-8 sm:py-10">
           <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            <ResumenCard label={textos.summaryClases} value={resumen.clases} accent="from-amber-200 to-orange-100" />
-            <ResumenCard label={textos.summaryObjectProperties} value={resumen.propiedades_objeto} accent="from-rose-200 to-orange-100" />
-            <ResumenCard label={textos.summaryDataProperties} value={resumen.propiedades_datos} accent="from-yellow-100 to-amber-50" />
-            <ResumenCard label={textos.summaryIndividuos} value={resumen.individuos} accent="from-orange-200 to-amber-100" />
+            <ResumenCard label={textos.summaryClases} value={resumen.clases} accent="from-amber-400 to-orange-300" />
+            <ResumenCard label={textos.summaryObjectProperties} value={resumen.propiedades_objeto} accent="from-rose-400 to-orange-300" />
+            <ResumenCard label={textos.summaryDataProperties} value={resumen.propiedades_datos} accent="from-yellow-300 to-amber-200" />
+            <ResumenCard label={textos.summaryIndividuos} value={resumen.individuos} accent="from-orange-400 to-amber-300" />
           </section>
 
           <section className="mt-6 rounded-4xl bg-white/90 p-4 backdrop-blur-md sm:p-3 shadow-lg">
