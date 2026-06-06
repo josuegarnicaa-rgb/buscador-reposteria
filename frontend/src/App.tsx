@@ -45,6 +45,8 @@ function App() {
       className="min-h-screen text-stone-900"
       style={{
         backgroundImage: 'url(/img1.jpg)',
+        backgroundColor: "rgba(0,0,0,0.3)",
+        backgroundBlendMode: "multiply",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
@@ -62,21 +64,24 @@ function App() {
             <ResumenCard label={textos.summaryIndividuos} value={resumen.individuos} accent="from-orange-400 to-amber-300" />
           </section>
 
-          <section className="mt-6 rounded-4xl bg-white/90 p-4 backdrop-blur-md sm:p-3 shadow-lg">
-            <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <section className="mt-6 rounded-4xl bg-white/90 p-5 backdrop-blur-md shadow-lg sm:p-6">
+
+            <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-400">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-stone-400">
                   {textos.languageLabel}
                 </p>
-                <p className="mt-1 text-sm text-stone-500">{textos.languageHelp}</p>
+                <p className="mt-1 text-sm font-medium text-stone-600">{textos.languageHelp}</p>
               </div>
 
-              <label className="flex items-center gap-3 rounded-2xl border border-stone-200 bg-white px-4 py-3 shadow-sm">
-                <span className="text-sm font-medium text-stone-700">{textos.languageLabel}</span>
+              <label className="flex items-center gap-3 rounded-2xl border border-amber-50/50 bg-amber-50/30 px-4 py-2.5 shadow-sm transition ">
+                <span className="text-xs font-semibold uppercase tracking-widest text-stone-500">
+                  {textos.languageLabel}
+                </span>
                 <select
                   value={idioma}
                   onChange={(event) => manejarCambioIdioma(event.target.value as Idioma)}
-                  className="rounded-xl border border-stone-200 bg-stone-50 px-3 py-2 text-sm font-medium text-stone-800 outline-none transition focus:border-stone-400"
+                  className="rounded-xl border border-amber-200/50 bg-white/80 px-3 py-1.5 text-sm font-semibold text-stone-800 outline-none transition "
                 >
                   {idiomasDisponibles.map((opcion) => (
                     <option key={opcion.value} value={opcion.value}>
@@ -87,18 +92,20 @@ function App() {
               </label>
             </div>
 
-            <form onSubmit={manejarSubmit} className="flex flex-col gap-1 md:flex-row">
-              <input
-                type="text"
-                name="termino"
-                value={termino}
-                onChange={(event) => setTermino(event.target.value)}
-                placeholder={textos.searchPlaceholder}
-                className="flex-1 rounded-2xl bg-white/95 px-4 py-3 text-base outline-none ring-1 ring-stone-200 transition focus:ring-2 focus:ring-stone-900/10"
-              />
+            <form onSubmit={manejarSubmit} className="flex flex-col gap-2 md:flex-row">
+              <div className="relative flex-1">
+                <input
+                  type="text"
+                  name="termino"
+                  value={termino}
+                  onChange={(event) => setTermino(event.target.value)}
+                  placeholder={textos.searchPlaceholder}
+                  className="w-full rounded-2xl border border-stone-200/80 bg-white/95 px-5 py-3.5 text-base text-stone-800 outline-none placeholder:text-stone-400 transition focus:border-amber-100 focus:ring-2 focus:ring-amber-100/50"
+                />
+              </div>
               <button
                 type="submit"
-                className="rounded-2xl bg-stone-900 px-6 py-4 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-stone-800 disabled:cursor-not-allowed disabled:opacity-60"
+                className="rounded-2xl bg-amber-800 px-7 py-3.5 font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-amber-700 hover:shadow-lg active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer"
                 disabled={cargando}
               >
                 {cargando ? textos.searchingButton : textos.searchButton}
@@ -106,7 +113,7 @@ function App() {
             </form>
 
             {error || errorSummary ? (
-              <p className="mt-4 rounded-2xl bg-rose-50 px-4 py-3 text-sm text-rose-500">
+              <p className="mt-4 rounded-2xl border border-rose-200/60 bg-rose-50/80 px-4 py-3 text-sm text-rose-600">
                 {error || errorSummary}
               </p>
             ) : null}
