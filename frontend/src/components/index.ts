@@ -1,5 +1,5 @@
 export * from './DetailGroup.tsx'
 export * from './MapGroup.tsx'
-export * from './NavBar.tsx'
+export * from './Header.tsx'
 export * from './ResumenCard.tsx'
 export * from './DBPediaCard.tsx'

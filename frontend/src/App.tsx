@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { SubmitEvent } from 'react'
-import { MapGroup, DetailGroup, ResumenCard, NavBar, DBPediaCard } from './components'
+import { MapGroup, DetailGroup, ResumenCard, DBPediaCard, Header } from './components'
 import { useSearch } from './hooks/useSearch'
 import { useSummary } from './hooks/useSummary'
 import { idiomasDisponibles, obtenerTextos } from './i18n'
@@ -54,7 +54,7 @@ function App() {
     >
       <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 py-6 sm:px-6 lg:px-8 backdrop-blur-[2px]">
 
-        <NavBar badge={textos.navBadge} title={textos.navTitle} />
+        <Header badge={textos.navBadge} title={textos.navTitle} />
 
         <main className="flex-1 py-8 sm:py-10">
           <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
