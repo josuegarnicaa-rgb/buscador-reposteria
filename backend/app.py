@@ -14,6 +14,7 @@ from services.i18n import (
     traducir_origen,
     traducir_al_esp,
 )
+from utils.text_conec import quitar_conectores
 
 app = Flask(__name__, static_folder=None, template_folder=None)
 
@@ -246,7 +247,7 @@ def api_buscar():
     termino_original = request.args.get("termino", "")
     idioma = normalizar_idioma(request.args.get("idioma", "es"))
     termino_en_esp = traducir_al_esp(termino_original, idioma)
-    resultados_locales = buscar(termino_en_esp, idioma)
+    resultados_locales = buscar(quitar_conectores(termino_en_esp), idioma)
     resultados_dbpedia_remotos = consultar_dbpedia(termino_original, idioma)
     resultados_dbpedia_locales = buscar_dbpedia_local(termino_original, idioma)
 
