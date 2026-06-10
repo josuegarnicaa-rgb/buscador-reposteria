@@ -144,39 +144,43 @@ function App() {
               {data?.resultados.map((resultado) => (
                 <article
                   key={resultado.id}
-                  className="overflow-hidden rounded-[1.75rem] bg-white/95 p-5 shadow-md hover:-translate-y-0.5 hover:shadow-xl"
+                  className="group overflow-hidden rounded-[1.75rem] border border-white/60 bg-white/90 shadow-md backdrop-blur-sm transition hover:-translate-y-1 hover:shadow-xl"
                 >
-                  <div className="flex flex-wrap items-start justify-between gap-3">
-                    <div>
-                      <h3 className="text-xl font-semibold text-stone-900">{resultado.nombre}</h3>
-                      <p className="mt-1 text-sm text-stone-500">{textos.elementPrefix} {resultado.tipo}</p>
-                    </div>
-                    <div className="flex flex-col items-end gap-2">
-                      <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-amber-900">
-                        {resultado.tipo}
-                      </span>
-                      <span className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] ${claseOrigen(resultado.origen)}`}>
-                        {resultado.origen}
-                      </span>
+                  <div className="border-b border-amber-100/80 bg-linear-to-r from-amber-50/80 to-white/60 px-5 py-4">
+                    <div className="flex flex-wrap items-start justify-between gap-3">
+                      <div>
+                        <h3 className="text-lg font-bold tracking-tight text-stone-900">{resultado.nombre}</h3>
+                        <p className="mt-0.5 text-xs font-medium uppercase tracking-widest text-stone-400">
+                          {textos.elementPrefix} {resultado.tipo}
+                        </p>
+                      </div>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="rounded-full border border-amber-200/60 bg-amber-100/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-amber-800">
+                          {resultado.tipo}
+                        </span>
+                        <span className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] ${claseOrigen(resultado.origen)}`}>
+                          {resultado.origen}
+                        </span>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="mt-5 space-y-4 text-sm text-stone-700">
-                    {resultado.clases.length > 0 ? (
+                  <div className="space-y-3 p-5 text-sm text-stone-700">
+                    {resultado.clases.length > 0 && (
                       <DetailGroup title={textos.classesLabel} items={resultado.clases} />
-                    ) : null}
-                    {resultado.superclases.length > 0 ? (
+                    )}
+                    {resultado.superclases.length > 0 && (
                       <DetailGroup title={textos.superclassesLabel} items={resultado.superclases} />
-                    ) : null}
-                    {Object.keys(resultado.relaciones).length > 0 ? (
+                    )}
+                    {Object.keys(resultado.relaciones).length > 0 && (
                       <MapGroup title={textos.relationsLabel} data={resultado.relaciones} />
-                    ) : null}
-                    {Object.keys(resultado.atributos).length > 0 ? (
+                    )}
+                    {Object.keys(resultado.atributos).length > 0 && (
                       <MapGroup title={textos.attributesLabel} data={resultado.atributos} />
-                    ) : null}
-                    {Object.keys(resultado.usado_en).length > 0 ? (
+                    )}
+                    {Object.keys(resultado.usado_en).length > 0 && (
                       <MapGroup title={textos.usedInLabel} data={resultado.usado_en} />
-                    ) : null}
+                    )}
                   </div>
                 </article>
               ))}
