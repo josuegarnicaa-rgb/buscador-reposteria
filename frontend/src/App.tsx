@@ -191,6 +191,7 @@ function App() {
                 <div className="grid gap-5 lg:grid-cols-2">
                   {data.dbpedia.map((dbp) => (
                     <DBPediaCard
+                      key={dbp.id}
                       noImageLabel={textos.noImageLabel}
                       classOrigin={claseOrigen(dbp.origen)}
                       typeLabel={textos.typeLabel}
