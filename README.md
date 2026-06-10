@@ -1,89 +1,88 @@
 # Buscador Semántico de Repostería
 
-Este proyecto es un buscador semántico desarrollado con **React** y **Flask**. Permite cargar una ontología en formato `.owx` y buscar información relacionada con productos, recetas, ingredientes, herramientas y relaciones del dominio de la repostería.
+Buscador semántico desarrollado con **React** y **Flask** que permite consultar una ontología de repostería en formato `.owx`. Soporta búsqueda de productos, recetas, ingredientes, herramientas y relaciones semánticas, con resultados enriquecidos desde **DBpedia local y remota**, y traducción automática a 5 idiomas (español, inglés, portugués, francés e italiano).
 
 ---
 
-## 1. Descripción del proyecto
+## Índice
 
-El sistema utiliza una ontología de repostería para representar conocimiento mediante clases, individuos, propiedades y relaciones.  
-El buscador permite consultar elementos como:
-
-- Productos de repostería
-- Ingredientes
-- Recetas
-- Herramientas
-- Clases
-- Relaciones semánticas
-- Atributos de los individuos
+1. [Tecnologías](#1-tecnologías)
+2. [Requisitos previos](#2-requisitos-previos)
+3. [Estructura del proyecto](#3-estructura-del-proyecto)
+4. [Instalación](#4-instalación)
+5. [Ejecución](#5-ejecución)
+6. [Acceso](#6-acceso)
 
 ---
 
-## 2. Tecnologías utilizadas
+## 1. Tecnologías
 
-- **Python 3.14.5**
-- **Flask**
-- **React**
-- **Tailwind CSS**
-- **Typescript**
-- **Ontología OWX / OWL XML**
+| Capa           | Tecnología                            |
+| -------------- | ------------------------------------- |
+| Backend        | Python 3.14, Flask                    |
+| Frontend       | React, TypeScript, Tailwind CSS, Vite |
+| Ontología      | OWL XML (`.owx`)                      |
+| Traducción     | deep-translator (Google Translate)    |
+| Datos externos | DBpedia (SPARQL remoto y dump local)  |
 
 ---
 
-## 3. Descargar e instalar Python
+## 2. Requisitos previos
 
-Para ejecutar el backend se debe instalar Python desde la página oficial:
+Antes de instalar el proyecto se deben tener instalados **Python** y **Node.js**.
 
-<https://www.python.org/downloads/windows/>
+### Python
 
-Se recomienda usar **Python 3.14.5 (64-bit)** o una versión estable superior.
+Descargar desde: <https://www.python.org/downloads/>
 
-Al abrir el instalador de Python, antes de instalar se deben marcar las siguientes opciones:
+Se recomienda **Python 3.14**.
 
-- **Add python.exe to PATH**
-- **Use admin privileges when installing py.exe**
-
-La opción más importante es:
-
-```text
-Add python.exe to PATH
-```
-
-Esta opción permite usar los comandos `python` y `pip` desde la terminal.
-
-Imagen de referencia:
+> ⚠️ Durante la instalación marcar obligatoriamente estas opciones antes de continuar:
+>
+> - `Add python.exe to PATH`
+> - `Use admin privileges when installing py.exe`
 
 ![Instalación de Python con PATH marcado](backend/static/instalacion-python.png)
 
-Luego presionar:
+Sin la opción `Add python.exe to PATH` los comandos `python` y `pip` no funcionarán en la terminal.
 
-```text
-Install Now
+### Node.js
+
+Descargar desde: <https://nodejs.org/es/download>
+
+Se recomienda la versión **LTS** para garantizar estabilidad y compatibilidad.
+
+### Verificar instalación
+
+Abrir una terminal y ejecutar:
+
+```powershell
+python --version
+pip --version
+node --version
+npm --version
 ```
 
----
-
-## 4. Descargar de Node js
-
-Para ejecutar el frontend se debe instalar Node js desde la página oficial:
-
-<https://nodejs.org/es>
-
-Se recomienda usar la versión **LTS** (Long Term Support) para garantizar estabilidad y compatibilidad.
+Todos los comandos deben devolver una versión. Si alguno falla, revisar que esté correctamente agregado al PATH.
 
 ---
 
-## 5. Estructura del proyecto
-
-La estructura del proyecto debe quedar de la siguiente forma:
+## 3. Estructura del proyecto
 
 ```text
 buscador-reposteria/
 ├── backend/
 │   ├── app.py
 │   ├── requirements.txt
+│   ├── cache/
+│   │   └── traducciones.json
+│   ├── services/
+│   │   ├── i18n.py
+│   │   ├── dbpedia.py
+│   │   └── dbpedia_local.py
 │   └── ontologia/
-│       └── reposteria.owx
+│   │   ├── reposteria.owx
+│   │   └── dbpedia_local.owx
 ├── frontend/
 │   ├── package.json
 │   ├── vite.config.ts
@@ -91,47 +90,92 @@ buscador-reposteria/
 │       ├── App.tsx
 │       ├── main.tsx
 │       ├── index.css
-│       ├── hooks/
 │       ├── components/
-│       └── types/
-│       └── config  /
+│       ├── hooks/
+│       ├── types/
+│       └── config/
 └── README.md
 ```
 
-## Instalación
+---
 
-Backend:
+## 4. Instalación
+
+### 4.1 Clonar el repositorio
+
+```powershell
+git clone https://github.com/josuegarnicaa-rgb/buscador-reposteria.git
+cd buscador-reposteria
+```
+
+### 4.2 Backend
 
 ```powershell
 cd backend
 pip install -r requirements.txt
 ```
 
-Frontend:
+Verificar que las dependencias se instalaron correctamente:
+
+```powershell
+pip list
+```
+
+### 4.3 Frontend
 
 ```powershell
 cd frontend
 npm install
 ```
 
-## Ejecutar
+> Si se usa **bun** en lugar de npm:
+>
+> ```powershell
+> bun install
+> ```
 
-Backend:
+---
+
+## 5. Ejecución
+
+Backend y frontend deben ejecutarse **al mismo tiempo**, cada uno en una terminal separada.
+
+### Terminal 1 — Backend
 
 ```powershell
 cd backend
 python app.py
 ```
 
-Frontend:
+Salida esperada:
+
+```text
+ * Running on http://0.0.0.0:5000
+ * Debug mode: on
+```
+
+### Terminal 2 — Frontend
 
 ```powershell
 cd frontend
 npm run dev
 ```
 
-## Acceso
+Salida esperada:
 
-Frontend: `http://localhost:5173`
+```text
+  VITE v6.x.x  ready in xxx ms
+  ➜  Local:   http://localhost:5173/
+```
 
-Backend: `http://localhost:5000`
+> ⚠️ El backend debe estar corriendo **antes** de usar el frontend, ya que este consume la API en `localhost:5000`.
+
+---
+
+## 6. Acceso
+
+| Servicio          | URL                                                        |
+| ----------------- | ---------------------------------------------------------- |
+| Frontend          | <http://localhost:5173>                                    |
+| Backend (API)     | <http://localhost:5000>                                    |
+| Endpoint búsqueda | <http://localhost:5000/api/buscar?termino=torta&idioma=es> |
