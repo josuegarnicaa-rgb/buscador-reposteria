@@ -1,131 +1,146 @@
+import json
 import re
 import unicodedata
+from pathlib import Path
+from deep_translator import GoogleTranslator
 
-IDIOMAS_VALIDOS = {'es', 'en', 'pt', 'fr', 'it'}
-IDIOMA_POR_DEFECTO = 'es'
+IDIOMAS_VALIDOS = {"es", "en", "pt", "fr", "it"}
+IDIOMA_POR_DEFECTO = "es"
 
 ORIGENES = {
-    'LOCAL': {
-        'es': 'LOCAL',
-        'en': 'LOCAL',
-        'pt': 'LOCAL',
-        'fr': 'LOCAL',
-        'it': 'LOCALE',
+    "LOCAL": {
+        "es": "LOCAL",
+        "en": "LOCAL",
+        "pt": "LOCAL",
+        "fr": "LOCAL",
+        "it": "LOCALE",
     },
-    'DBPEDIA REMOTO': {
-        'es': 'DBPEDIA REMOTO',
-        'en': 'REMOTE DBPEDIA',
-        'pt': 'DBPEDIA REMOTA',
-        'fr': 'DBPEDIA DISTANTE',
-        'it': 'DBPEDIA REMOTA',
+    "DBPEDIA REMOTO": {
+        "es": "DBPEDIA REMOTO",
+        "en": "REMOTE DBPEDIA",
+        "pt": "DBPEDIA REMOTA",
+        "fr": "DBPEDIA DISTANTE",
+        "it": "DBPEDIA REMOTA",
     },
-    'DBPEDIA LOCAL': {
-        'es': 'DBPEDIA LOCAL',
-        'en': 'LOCAL DBPEDIA',
-        'pt': 'DBPEDIA LOCAL',
-        'fr': 'DBPEDIA LOCALE',
-        'it': 'DBPEDIA LOCALE',
+    "DBPEDIA LOCAL": {
+        "es": "DBPEDIA LOCAL",
+        "en": "LOCAL DBPEDIA",
+        "pt": "DBPEDIA LOCAL",
+        "fr": "DBPEDIA LOCALE",
+        "it": "DBPEDIA LOCALE",
     },
 }
 
-TRADUCCIONES = {
-    'animal': {'es': 'animal', 'en': 'animal', 'pt': 'animal', 'fr': 'animal', 'it': 'animale'},
-    'azucar': {'es': 'azúcar', 'en': 'sugar', 'pt': 'açúcar', 'fr': 'sucre', 'it': 'zucchero'},
-    'brownie': {'es': 'brownie', 'en': 'brownie', 'pt': 'brownie', 'fr': 'brownie', 'it': 'brownie'},
-    'cheesecake': {'es': 'cheesecake', 'en': 'cheesecake', 'pt': 'cheesecake', 'fr': 'cheesecake', 'it': 'cheesecake'},
-    'clase': {'es': 'clase', 'en': 'class', 'pt': 'classe', 'fr': 'classe', 'it': 'classe'},
-    'decoracion': {'es': 'decoración', 'en': 'decoration', 'pt': 'decoração', 'fr': 'décoration', 'it': 'decorazione'},
-    'dona': {'es': 'dona', 'en': 'doughnut', 'pt': 'donut', 'fr': 'beignet', 'it': 'ciambella'},
-    'cupcake': {'es': 'cupcake', 'en': 'cupcake', 'pt': 'cupcake', 'fr': 'cupcake', 'it': 'cupcake'},
-    'durazno': {'es': 'durazno', 'en': 'peach', 'pt': 'pêssego', 'fr': 'pêche', 'it': 'pesca'},
-    'evento': {'es': 'evento', 'en': 'event', 'pt': 'evento', 'fr': 'événement', 'it': 'evento'},
-    'fresa': {'es': 'fresa', 'en': 'strawberry', 'pt': 'morango', 'fr': 'fraise', 'it': 'fragola'},
-    'fruta': {'es': 'fruta', 'en': 'fruit', 'pt': 'fruta', 'fr': 'fruit', 'it': 'frutta'},
-    'galleta': {'es': 'galleta', 'en': 'cookie', 'pt': 'biscoito', 'fr': 'biscuit', 'it': 'biscotto'},
-    'gluten': {'es': 'gluten', 'en': 'gluten', 'pt': 'glúten', 'fr': 'gluten', 'it': 'glutine'},
-    'herramienta': {'es': 'herramienta', 'en': 'tool', 'pt': 'ferramenta', 'fr': 'outil', 'it': 'strumento'},
-    'individual': {'es': 'individuo', 'en': 'individual', 'pt': 'indivíduo', 'fr': 'individu', 'it': 'individuo'},
-    'individuo': {'es': 'individuo', 'en': 'individual', 'pt': 'indivíduo', 'fr': 'individu', 'it': 'individuo'},
-    'ingrediente': {'es': 'ingrediente', 'en': 'ingredient', 'pt': 'ingrediente', 'fr': 'ingrédient', 'it': 'ingrediente'},
-    'liquido': {'es': 'líquido', 'en': 'liquid', 'pt': 'líquido', 'fr': 'liquide', 'it': 'liquido'},
-    'muffin': {'es': 'muffin', 'en': 'muffin', 'pt': 'muffin', 'fr': 'muffin', 'it': 'muffin'},
-    'pastry': {'es': 'repostería', 'en': 'pastry', 'pt': 'confeitaria', 'fr': 'pâtisserie', 'it': 'pasticceria'},
-    'pie': {'es': 'pie', 'en': 'pie', 'pt': 'torta', 'fr': 'tarte', 'it': 'torta'},
-    'principal': {'es': 'principal', 'en': 'main', 'pt': 'principal', 'fr': 'principal', 'it': 'principale'},
-    'producto': {'es': 'producto', 'en': 'product', 'pt': 'produto', 'fr': 'produit', 'it': 'prodotto'},
-    'pudin': {'es': 'pudín', 'en': 'pudding', 'pt': 'pudim', 'fr': 'pudding', 'it': 'budino'},
-    'receta': {'es': 'receta', 'en': 'recipe', 'pt': 'receita', 'fr': 'recette', 'it': 'ricetta'},
-    'refrigeracion': {'es': 'refrigeración', 'en': 'refrigeration', 'pt': 'refrigeração', 'fr': 'réfrigération', 'it': 'refrigerazione'},
-    'relleno': {'es': 'relleno', 'en': 'filling', 'pt': 'recheio', 'fr': 'garniture', 'it': 'ripieno'},
-    'reposteria': {'es': 'repostería', 'en': 'pastry', 'pt': 'confeitaria', 'fr': 'pâtisserie', 'it': 'pasticceria'},
-    'sabor': {'es': 'sabor', 'en': 'flavor', 'pt': 'sabor', 'fr': 'saveur', 'it': 'sapore'},
-    'seco': {'es': 'seco', 'en': 'dry', 'pt': 'seco', 'fr': 'sec', 'it': 'secco'},
-    'sin': {'es': 'sin', 'en': 'without', 'pt': 'sem', 'fr': 'sans', 'it': 'senza'},
-    'superclase': {'es': 'superclase', 'en': 'superclass', 'pt': 'superclasse', 'fr': 'superclasse', 'it': 'superclasse'},
-    'tamaño': {'es': 'tamaño', 'en': 'size', 'pt': 'tamanho', 'fr': 'taille', 'it': 'dimensione'},
-    'temperatura': {'es': 'temperatura', 'en': 'temperature', 'pt': 'temperatura', 'fr': 'température', 'it': 'temperatura'},
-    'tiempo': {'es': 'tiempo', 'en': 'time', 'pt': 'tempo', 'fr': 'temps', 'it': 'tempo'},
-    'tipo': {'es': 'tipo', 'en': 'type', 'pt': 'tipo', 'fr': 'type', 'it': 'tipo'},
-    'torta': {'es': 'torta', 'en': 'cake', 'pt': 'bolo', 'fr': 'gâteau', 'it': 'torta'},
-    'usar': {'es': 'usar', 'en': 'use', 'pt': 'usar', 'fr': 'utiliser', 'it': 'usare'},
-    'usa': {'es': 'usa', 'en': 'uses', 'pt': 'usa', 'fr': 'utilise', 'it': 'usa'},
-    'vegetal': {'es': 'vegetal', 'en': 'vegetable', 'pt': 'vegetal', 'fr': 'végétal', 'it': 'vegetale'},
-    'vainilla': {'es': 'vainilla', 'en': 'vanilla', 'pt': 'baunilha', 'fr': 'vanille', 'it': 'vaniglia'},
-    'zanahoria': {'es': 'zanahoria', 'en': 'carrot', 'pt': 'cenoura', 'fr': 'carotte', 'it': 'carota'},
-}
+_CACHE_PATH = Path(__file__).resolve().parent.parent / "cache" / "traducciones.json"
+_cache_traduccion: dict[str, str] = {}
+
+
+def _clave(texto: str, origen: str, destino: str) -> str:
+    return f"{origen}|{destino}|{texto}"
+
+
+def _cargar_cache():
+    global _cache_traduccion
+    if _CACHE_PATH.exists():
+        try:
+            _cache_traduccion = json.loads(_CACHE_PATH.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            _cache_traduccion = {}
+    else:
+        _cache_traduccion = {}
+
+
+def _guardar_cache():
+    try:
+        _CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        _CACHE_PATH.write_text(
+            json.dumps(_cache_traduccion, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+    except OSError:
+        pass
+
+
+_cargar_cache()
 
 
 def normalizar_idioma(idioma):
-    idioma_normalizado = (idioma or '').strip().lower()
+    idioma_normalizado = (idioma or "").strip().lower()
     if idioma_normalizado in IDIOMAS_VALIDOS:
         return idioma_normalizado
     return IDIOMA_POR_DEFECTO
 
 
 def normalizar_texto(texto):
-    texto_normalizado = unicodedata.normalize('NFKD', texto or '')
-    sin_tildes = ''.join(
-        caracter for caracter in texto_normalizado if not unicodedata.combining(caracter)
+    texto_normalizado = unicodedata.normalize("NFKD", texto or "")
+    sin_tildes = "".join(
+        caracter
+        for caracter in texto_normalizado
+        if not unicodedata.combining(caracter)
     )
     return sin_tildes.lower()
 
 
 def separar_identificador(valor):
-    limpio = (valor or '').replace('#', ' ').replace('_', ' ').replace('-', ' ')
-    limpio = re.sub(r'(?<=[a-záéíóúñ])(?=[A-ZÁÉÍÓÚÑ])', ' ', limpio)
-    limpio = re.sub(r'(?<=[A-Za-z])(?=\d)', ' ', limpio)
-    limpio = re.sub(r'(?<=\d)(?=[A-Za-z])', ' ', limpio)
+    limpio = (valor or "").replace("#", " ").replace("_", " ").replace("-", " ")
+    limpio = re.sub(r"(?<=[a-záéíóúñ])(?=[A-ZÁÉÍÓÚÑ])", " ", limpio)
+    limpio = re.sub(r"(?<=[A-Za-z])(?=\d)", " ", limpio)
+    limpio = re.sub(r"(?<=\d)(?=[A-Za-z])", " ", limpio)
     return [parte for parte in limpio.split() if parte]
 
 
-def traducir_palabra(palabra, idioma):
-    clave = normalizar_texto(palabra)
-    return TRADUCCIONES.get(clave, {}).get(idioma, palabra)
-
-
-def traducir_texto(texto, idioma):
-    partes = separar_identificador(texto)
-    if not partes:
+def _traducir_con_api(texto: str, origen: str, destino: str) -> str:
+    if not texto or not texto.strip():
         return texto
-    traduccion = ' '.join(traducir_palabra(parte, idioma) for parte in partes)
-    return traduccion[:1].upper() + traduccion[1:] if traduccion else texto
+
+    clave = _clave(texto.strip(), origen, destino)
+
+    if clave in _cache_traduccion:
+        return _cache_traduccion[clave]
+
+    try:
+        resultado = GoogleTranslator(source=origen, target=destino).translate(
+            texto.strip()
+        )
+        _cache_traduccion[clave] = resultado or texto
+        _guardar_cache()
+        return _cache_traduccion[clave]
+    except Exception:
+        return texto
 
 
-def traducir_identificador(identificador, idioma):
-    return traducir_texto(identificador, idioma)
+def traducir_al_esp(termino: str, idioma_origen: str) -> str:
+    if idioma_origen == "es":
+        return termino
+    return _traducir_con_api(termino, idioma_origen, "es")
 
 
-def traducir_lista(valores, idioma):
-    return [traducir_identificador(valor, idioma) for valor in valores]
+def traducir_identificador(identificador: str, idioma: str) -> str:
+    partes = separar_identificador(identificador)
+    texto_es = " ".join(partes)
+
+    if not texto_es:
+        return identificador
+
+    if idioma == "es":
+        resultado = texto_es
+    else:
+        resultado = _traducir_con_api(texto_es, "es", idioma)
+
+    return resultado[:1].upper() + resultado[1:] if resultado else identificador
 
 
-def traducir_mapa(valores, idioma):
+def traducir_lista(valores: list, idioma: str) -> list:
+    return [traducir_identificador(v, idioma) for v in valores]
+
+
+def traducir_mapa(valores: dict, idioma: str) -> dict:
     return {
-        traducir_identificador(clave, idioma): traducir_lista(valores_clave, idioma)
-        for clave, valores_clave in valores.items()
+        traducir_identificador(clave, idioma): traducir_lista(vals, idioma)
+        for clave, vals in valores.items()
     }
 
 
-def traducir_origen(origen, idioma):
+def traducir_origen(origen: str, idioma: str) -> str:
     idioma = normalizar_idioma(idioma)
     return ORIGENES.get(origen, {}).get(idioma, origen)

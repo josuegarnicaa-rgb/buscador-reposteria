@@ -12,7 +12,7 @@ from services.i18n import (
     traducir_lista,
     traducir_mapa,
     traducir_origen,
-    traducir_texto,
+    traducir_al_esp,
 )
 
 app = Flask(__name__, static_folder=None, template_folder=None)
@@ -161,7 +161,7 @@ def traducir_resultado(resultado, idioma):
     return {
         "id": resultado["nombre"],
         "nombre": traducir_identificador(resultado["nombre"], idioma),
-        "tipo": traducir_texto(resultado["tipo"], idioma),
+        "tipo": traducir_al_esp(resultado["tipo"], idioma),
         "clases": traducir_lista(resultado["clases"], idioma),
         "superclases": traducir_lista(resultado["superclases"], idioma),
         "atributos": traducir_mapa(resultado["atributos"], idioma),
@@ -243,11 +243,12 @@ def api_resumen():
 
 @app.get("/api/buscar")
 def api_buscar():
-    termino = request.args.get("termino", "")
+    termino_original = request.args.get("termino", "")
     idioma = normalizar_idioma(request.args.get("idioma", "es"))
-    resultados_locales = buscar(termino, idioma)
-    resultados_dbpedia_remotos = consultar_dbpedia(termino, idioma)
-    resultados_dbpedia_locales = buscar_dbpedia_local(termino, idioma)
+    termino_en_esp = traducir_al_esp(termino_original, idioma)
+    resultados_locales = buscar(termino_en_esp, idioma)
+    resultados_dbpedia_remotos = consultar_dbpedia(termino_original, idioma)
+    resultados_dbpedia_locales = buscar_dbpedia_local(termino_original, idioma)
 
     return jsonify(
         {
