@@ -9,6 +9,10 @@ export const useSearch = (idioma: Idioma) => {
   const [cargando, setCargando] = useState(false)
   const [error, setError] = useState('')
 
+  const limpiar = () => {
+    setResultados(null)
+    setBuscado('')
+  }
   const buscar = async (valor: string, idiomaBusqueda = idioma) => {
     const consulta = valor.trim()
 
@@ -43,6 +47,7 @@ export const useSearch = (idioma: Idioma) => {
 
   return {
     buscar,
+    limpiar,
     resultados,
     buscado,
     cargando,

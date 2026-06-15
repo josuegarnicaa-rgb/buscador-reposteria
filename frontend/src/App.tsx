@@ -11,7 +11,7 @@ function App() {
   const [idioma, setIdioma] = useState<Idioma>('es')
   const textos = obtenerTextos(idioma)
   const { resumen, error: errorSummary } = useSummary(idioma)
-  const { buscar, resultados: data, buscado, cargando, error } = useSearch(idioma)
+  const { buscar, limpiar, resultados: data, buscado, cargando, error } = useSearch(idioma)
 
   const manejarSubmit = (evento: SubmitEvent<HTMLFormElement>) => {
     evento.preventDefault()
@@ -20,10 +20,8 @@ function App() {
 
   const manejarCambioIdioma = (nuevoIdioma: Idioma) => {
     setIdioma(nuevoIdioma)
-
-    if (buscado) {
-      void buscar(buscado, nuevoIdioma)
-    }
+    setTermino('')
+    limpiar()
   }
 
   const claseOrigen = (origen: string) => {
